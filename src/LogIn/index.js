@@ -1,55 +1,41 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { LoginAction } from './actions';
 import PropTypes from 'prop-types';
-import { SignUpAction } from './actions';
 
-
-export class SignUp extends Component {
+export class LogIn extends Component {
   constructor() {
     super();
     this.state = {
-      name: '',
       email: '',
       password: '',
-      retypePassword: '',
-      signUpError: false,
-      disabled: true,
-      passwordValidationError: false
+      disabled: true
     };
   }
 
-  handleSignUp(event) {
+  handleLogin(event) {
     event.preventDefault();
-    this.props.SignUpAction({
+    this.props.loginAction({
       email: this.state.email,
       id: 1
     });
     this.setState({
-      name: '',
       email: '',
       password: '',
-      retypePassword: '',
-      signUpError: false,
-      disabled: true,
-      passwordValidationError: false
+      disabled: true
     });
   }
 
   handleChange(field, event){
     this.setState({
       [field]: event.target.value,
-      disabled: !this.state.email || !this.state.password || !this.state.name
+      disabled: !this.state.email || !this.state.password
     });
   }
 
   render() {
     return (
-      <form onSubmit={(event) => this.handleSignUp(event)}>
-        <input
-          type='text'
-          placeholder='Name'
-          onChange={(event) => this.handleChange('name', event)}
-        />
+      <form onSubmit={(event) => this.handleLogin(event)}>
         <input
           type='email'
           placeholder='Email'
@@ -60,11 +46,6 @@ export class SignUp extends Component {
           placeholder='Password'
           onChange={(event) => this.handleChange('password', event)}
         />
-        <input
-          type='password'
-          placeholder='Please Retype Password'
-          onChange={(event) => this.handleChange('retypePassword', event)}
-        />
         <button type='submit'
           disabled={this.state.disabled}>
             Sign Up
@@ -74,8 +55,8 @@ export class SignUp extends Component {
   }
 }
 
-SignUp.propTypes ={
-  SignUpAction: PropTypes.func,
+LogIn.propTypes ={
+  loginAction: PropTypes.func,
   user: PropTypes.object
 };
 
@@ -84,7 +65,7 @@ const mapStateToProps =  (store) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  SignUpAction: ( user ) => { dispatch(SignUpAction(user)); }
+  loginAction: ( user ) => { dispatch(LoginAction(user)); }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
