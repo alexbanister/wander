@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { SignUpAction } from './actions';
 
 
 export class SignUp extends Component {
@@ -20,19 +19,11 @@ export class SignUp extends Component {
 
   handleSignUp(event) {
     event.preventDefault();
-    this.props.SignUpAction({
+    this.props.handleSubmit({
       email: this.state.email,
       id: 1
     });
-    this.setState({
-      name: '',
-      email: '',
-      password: '',
-      retypePassword: '',
-      signUpError: false,
-      disabled: true,
-      passwordValidationError: false
-    });
+    this.props.history.push('/');
   }
 
   handleChange(field, event){
@@ -75,16 +66,10 @@ export class SignUp extends Component {
 }
 
 SignUp.propTypes ={
-  SignUpAction: PropTypes.func,
-  user: PropTypes.object
+  handleSubmit: PropTypes.func,
+  history: PropTypes.shape({
+    push: PropTypes.func
+  })
 };
 
-const mapStateToProps =  (store) => ({
-  user: store.user
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  SignUpAction: ( user ) => { dispatch(SignUpAction(user)); }
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default withRouter(SignUp);

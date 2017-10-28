@@ -28,25 +28,37 @@ export class BucketList extends Component {
     });
   }
 
+  displayDestinations(allDestinations) {
+    return allDestinations.map( (destination, index) => (
+      <h3 key={index}>{destination}</h3>
+    ));
+  }
+
   render() {
     return (
-      <form onSubmit={(event) => this.handleAddDestination(event)}>
-        <input
-          type='destination'
-          placeholder='destination'
-          onChange={(event) => this.handleChange('destination', event)}
-        />
-        <button type='submit'
-          disabled={this.state.disabled}>
-            Add Destination
-        </button>
-      </form>
+      <div className='bucketlist'>
+        <form onSubmit={(event) => this.handleAddDestination(event)}>
+          <input
+            type='text'
+            placeholder='destination'
+            onChange={(event) => this.handleChange('destination', event)}
+          />
+          <button type='submit'
+            disabled={this.state.disabled}>
+              Add Destination
+          </button>
+        </form>
+        <div className='destinationList'>
+          {this.displayDestinations(this.props.destinations)}
+        </div>
+      </div>
     );
   }
 }
 
 BucketList.propTypes ={
-  addDestination: PropTypes.func
+  addDestination: PropTypes.func,
+  destinations: PropTypes.array
 };
 
 const mapStateToProps =  (store) => ({

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { LoginAction } from './actions';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 export class LogIn extends Component {
   constructor() {
@@ -15,15 +14,11 @@ export class LogIn extends Component {
 
   handleLogin(event) {
     event.preventDefault();
-    this.props.loginAction({
+    this.props.handleSubmit({
       email: this.state.email,
       id: 1
     });
-    this.setState({
-      email: '',
-      password: '',
-      disabled: true
-    });
+    this.props.history.push('/');
   }
 
   handleChange(field, event){
@@ -56,16 +51,10 @@ export class LogIn extends Component {
 }
 
 LogIn.propTypes ={
-  loginAction: PropTypes.func,
-  user: PropTypes.object
+  handleSubmit: PropTypes.func,
+  history: PropTypes.shape({
+    push: PropTypes.func
+  })
 };
 
-const mapStateToProps =  (store) => ({
-  user: store.user
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  loginAction: ( user ) => { dispatch(LoginAction(user)); }
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(LogIn);
+export default withRouter(LogIn);

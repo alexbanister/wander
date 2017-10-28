@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import { user } from './LogIn/reducers';
-import { newUser } from './SignUp/reducers';
+import { user } from './User/reducers';
 import { destinations } from './BucketList/reducers';
+import { preferences } from './Preferences/reducers';
 
 export default combineReducers({
   user,
-  newUser,
-  destinations
+  destinations,
+  preferences
 });
