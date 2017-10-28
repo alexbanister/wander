@@ -7,9 +7,18 @@ body {
   font-family: 'Quicksand', sans-serif;
   background: url("../assets/hero1.jpg");
   background-position: center;
-  background-size: cover;
-  width: 100vw;
-  min-height: 100vh; }
+  background-size: cover; }
 
 a {
   text-decoration: none; }
+
+.app {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  min-height: 100vh; }
+
+main {
+  width: 65vw;
+  padding: 3em;
+  background: rgba(64, 95, 115, 0.4); }

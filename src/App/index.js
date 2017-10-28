@@ -12,26 +12,28 @@ class App extends Component {
     return (
       <div className="app">
         <Header />
-        <Route
-          exact path='/'
-          component={Welcome}
-          key='Welcome'/>
-        <Route
-          exact path='/login'
-          component={User}
-          key='Login'/>
-        <Route
-          exact path='/signup'
-          render={()=> <User form='signup' />}
-          key='signup'/>
-        <Route
-          exact path='/bucketList'
-          component={BucketList}
-          key='BucketList'/>
-        <Route
-          exact path='/preferences'
-          component={Preferences}
-          key='Preferences'/>
+        <main>
+          <Route
+            exact path='/'
+            component={Welcome}
+            key='Welcome'/>
+          <Route
+            exact path='/login'
+            component={User}
+            key='Login'/>
+          <Route
+            exact path='/signup'
+            render={()=> <User form='signup' />}
+            key='signup'/>
+          <Route
+            exact path='/bucketList'
+            component={BucketList}
+            key='BucketList'/>
+          <Route
+            exact path='/preferences'
+            component={Preferences}
+            key='Preferences'/>
+        </main>
       </div>
     );
   }
