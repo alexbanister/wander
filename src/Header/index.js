@@ -6,7 +6,7 @@ export default class App extends Component {
   render() {
     return (
       <header>
-        <h1>Wander</h1>
+        <h1>Wonder <strong>&</strong> WANDER</h1>
         <nav>
           <NavLink to='/login'>Log In</NavLink>
           <NavLink to='/signup'>Sign Up</NavLink>
