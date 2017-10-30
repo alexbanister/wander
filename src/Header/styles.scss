@@ -1,0 +1,48 @@
+@import "../variables.scss";
+
+header {
+  width: 35vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $header-background;
+  border-right: 4px solid $highlight-dark;
+  z-index: 10;
+  h1{
+    font-size: 2.5em;
+    margin: 0;
+    padding: .5em;
+    padding-bottom: 1.7em;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    color: $background;
+  }
+  strong {
+    color: $highlight-dark;
+    vertical-align: sub;
+  }
+  nav {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    a {
+      padding: .75em 1em;
+      padding-right: 1.75em;
+      margin-right: -1em;
+      text-decoration: none;
+      color: $background;
+      font-weight: bold;
+      font-size: 1.5em;
+      &:hover {
+        color: $highlight-dark;
+      }
+    }
+    .active {
+      background: $highlight;
+      color: $body-dark;
+      box-shadow: $shadow;
+    }
+  }
+}

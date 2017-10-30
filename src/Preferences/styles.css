@@ -1,0 +1,18 @@
+.preferences {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: 5px 5px 25px #384E5E; }
+  .preferences label {
+    display: block;
+    padding: .5em; }
+    .preferences label label {
+      display: inline-block;
+      padding: .5em 1.5em; }
+  .preferences input {
+    display: block;
+    width: 100%; }
+  .preferences select {
+    margin: .5em; }
+  .preferences button {
+    width: 100%;
+    margin: auto; }

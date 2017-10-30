@@ -1,0 +1,26 @@
+@import "../variables.scss";
+
+.preferences {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-shadow: $shadow;
+  label {
+    display: block;
+    padding: .5em;
+    label {
+      display: inline-block;
+      padding: .5em 1.5em;
+    }
+  }
+  input {
+    display: block;
+    width: 100%;
+  }
+  select {
+    margin: .5em;
+  }
+  button {
+    width: 100%;
+    margin: auto;
+  }
+}

@@ -1,0 +1,42 @@
+@import "../variables.scss";
+
+.bucketlist {
+  input {
+    width: 75%;
+  }
+  button {
+    width: 25%;
+  }
+  .destinationList {
+    padding: 2em 1em;
+    .destinationCard {
+      display: flex;
+      justify-content: space-between;
+      color: $body-dark;
+      background: $background;
+      padding: .75em;
+      margin: 1em;
+      font-size: 2em;
+      .airportCode {
+        width: 20%;
+        padding: 0 .5em;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+      .cityName {
+        width: 100%;
+        padding: 0 .5em;
+      }
+      .destinationRemove {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: $background;
+        padding: 0 .25em;
+        border-radius: .25em;
+        @include linear-gradient($body-dark, $body-light);
+      }
+    }
+  }
+}
