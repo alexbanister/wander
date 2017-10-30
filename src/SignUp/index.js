@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 
@@ -35,32 +35,36 @@ export class SignUp extends Component {
 
   render() {
     return (
-      <form onSubmit={(event) => this.handleSignUp(event)}>
-        <input
-          type='text'
-          placeholder='Name'
-          onChange={(event) => this.handleChange('name', event)}
-        />
-        <input
-          type='email'
-          placeholder='Email'
-          onChange={(event) => this.handleChange('email', event)}
-        />
-        <input
-          type='password'
-          placeholder='Password'
-          onChange={(event) => this.handleChange('password', event)}
-        />
-        <input
-          type='password'
-          placeholder='Please Retype Password'
-          onChange={(event) => this.handleChange('retypePassword', event)}
-        />
-        <button type='submit'
-          disabled={this.state.disabled}>
-            Sign Up
-        </button>
-      </form>
+      <div className='signup'>
+        <form onSubmit={(event) => this.handleSignUp(event)}>
+          <input
+            type='text'
+            placeholder='Name'
+            onChange={(event) => this.handleChange('name', event)}
+          />
+          <input
+            type='email'
+            placeholder='Email'
+            onChange={(event) => this.handleChange('email', event)}
+          />
+          <input
+            type='password'
+            placeholder='Password'
+            onChange={(event) => this.handleChange('password', event)}
+          />
+          <input
+            type='password'
+            placeholder='Please Retype Password'
+            onChange={(event) => this.handleChange('retypePassword', event)}
+          />
+          <button type='submit'
+            disabled={this.state.disabled}>
+              Sign Up
+          </button>
+        </form>
+        {"Already have an account?"}<br />
+        <Link to='/login'>Log In</Link>
+      </div>
     );
   }
 }

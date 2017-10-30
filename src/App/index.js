@@ -5,6 +5,7 @@ import Welcome from '../Welcome/';
 import User from '../User/';
 import BucketList from '../BucketList/';
 import Preferences from '../Preferences/';
+import Search from '../Search/';
 import './styles.css';
 
 class App extends Component {
@@ -33,6 +34,10 @@ class App extends Component {
             exact path='/preferences'
             component={Preferences}
             key='Preferences'/>
+          <Route
+            exact path='/search'
+            component={Search}
+            key='Search'/>
         </main>
       </div>
     );

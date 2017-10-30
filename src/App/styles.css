@@ -4,6 +4,7 @@
 body {
   margin: 0;
   padding: 0;
+  color: #FFFFFF;
   font-family: 'Quicksand', sans-serif;
   background: url("../assets/hero1.jpg");
   background-position: center;
@@ -11,6 +12,8 @@ body {
 
 a {
   text-decoration: none; }
+  a:hover {
+    color: #AEE173; }
 
 .app {
   display: flex;
@@ -22,3 +25,8 @@ main {
   width: 65vw;
   padding: 3em;
   background: rgba(64, 95, 115, 0.4); }
+
+input, button, select {
+  font-size: 1.25rem;
+  padding: .5rem;
+  height: 2.5rem; }

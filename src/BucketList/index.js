@@ -30,7 +30,17 @@ export class BucketList extends Component {
 
   displayDestinations(allDestinations) {
     return allDestinations.map( (destination, index) => (
-      <h3 key={index}>{destination}</h3>
+      <div className='destinationCard' key={index}>
+        <span className='airportCode'>
+          CDG
+        </span>
+        <span className='cityName'>
+          {destination}
+        </span>
+        <span className='destinationRemove'>
+          X
+        </span>
+      </div>
     ));
   }
 
@@ -40,7 +50,8 @@ export class BucketList extends Component {
         <form onSubmit={(event) => this.handleAddDestination(event)}>
           <input
             type='text'
-            placeholder='destination'
+            value={this.state.destination}
+            placeholder='Destination'
             onChange={(event) => this.handleChange('destination', event)}
           />
           <button type='submit'

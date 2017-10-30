@@ -1,3 +1,10 @@
 @import "https://fonts.googleapis.com/css?family=Playfair+Display:400i";
 @import "https://fonts.googleapis.com/css?family=Quicksand:400,700";
 @import "App/styles.css";
+@import "BucketList/styles.css";
+@import "Header/styles.css";
+@import "LogIn/styles.css";
+@import "Preferences/styles.css";
+@import "SignUp/styles.css";
+@import "User/styles.css";
+@import "Welcome/styles.css";

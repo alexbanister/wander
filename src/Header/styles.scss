@@ -42,6 +42,7 @@ header {
     .active {
       background: $highlight;
       color: $body-dark;
+      box-shadow: $shadow;
     }
   }
 }

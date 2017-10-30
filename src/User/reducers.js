@@ -8,3 +8,14 @@ export const user = (store = {}, action) => {
     return store;
   }
 };
+
+export const isLoggedIn = (store = false, action) => {
+  switch (action.type) {
+  case 'LOGIN_ACTION':
+    return true;
+  case 'SIGN_UP_ACTION':
+    return true;
+  default:
+    return store;
+  }
+};

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 export class LogIn extends Component {
   constructor() {
@@ -30,22 +30,26 @@ export class LogIn extends Component {
 
   render() {
     return (
-      <form onSubmit={(event) => this.handleLogin(event)}>
-        <input
-          type='email'
-          placeholder='Email'
-          onChange={(event) => this.handleChange('email', event)}
-        />
-        <input
-          type='password'
-          placeholder='Password'
-          onChange={(event) => this.handleChange('password', event)}
-        />
-        <button type='submit'
-          disabled={this.state.disabled}>
-            Sign Up
-        </button>
-      </form>
+      <div className='login'>
+        <form onSubmit={(event) => this.handleLogin(event)}>
+          <input
+            type='email'
+            placeholder='Email'
+            onChange={(event) => this.handleChange('email', event)}
+          />
+          <input
+            type='password'
+            placeholder='Password'
+            onChange={(event) => this.handleChange('password', event)}
+          />
+          <button type='submit'
+            disabled={this.state.disabled}>
+              Sign Up
+          </button>
+        </form>
+        {"Don't have an account?"}<br />
+        <Link to='/signup'>Sign Up</Link>
+      </div>
     );
   }
 }

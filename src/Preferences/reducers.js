@@ -1,4 +1,4 @@
-export const preferences = (store = [], action) => {
+export const preferences = (store = {}, action) => {
   switch (action.type) {
   case 'SAVE_PREFERENCES':
     return Object.assign({}, action.preferences);

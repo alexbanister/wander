@@ -58,76 +58,87 @@ export class Preferences extends Component {
     return (
       <div className='preferences'>
         <form onSubmit={(event) => this.savePreferences(event)}>
-          <label htmlFor='departureAirport'>Departure Airport:</label>
-          <input
-            type='text'
-            value={this.state.departureAirport}
-            name='departureAirport'
-            placeholder='departureAirport'
-            onChange={(event) => this.handleChange('departureAirport', event)}
-          />
-          <label>Default Flexibility:</label>
-          <label htmlFor='departFlex'>Depart:</label>
-          <select
-            value={this.state.departFlex}
-            name='departFlex'
-            onChange={(event) => this.handleChange('departFlex', event)}>
-            <option value='0'>Exact</option>
-            <option value='1'>+/- 1 Day</option>
-            <option value='2'>+/- 2 Days</option>
-            <option value='3'>+/- 3 Days</option>
-          </select>
-          <label htmlFor='returnFlex'>Depart:</label>
-          <select
-            value={this.state.returnFlex}
-            name='returnFlex'
-            onChange={(event) => this.handleChange('returnFlex', event)}>
-            <option value='0'>Exact</option>
-            <option value='1'>+/- 1 Day</option>
-            <option value='2'>+/- 2 Days</option>
-            <option value='3'>+/- 3 Days</option>
-          </select>
+          <label htmlFor='departureAirport'>Departure Airport:
+            <input
+              type='text'
+              value={this.state.departureAirport}
+              name='departureAirport'
+              placeholder='Departure Airport'
+              onChange={(event) => this.handleChange('departureAirport', event)}
+            />
+          </label>
+          <label>Default Flexibility:
+            <div className='form-row'>
+              <label htmlFor='departFlex'>Depart:
+                <select
+                  value={this.state.departFlex}
+                  name='departFlex'
+                  onChange={(event) => this.handleChange('departFlex', event)}>
+                  <option value='0'>Exact</option>
+                  <option value='1'>+/- 1 Day</option>
+                  <option value='2'>+/- 2 Days</option>
+                  <option value='3'>+/- 3 Days</option>
+                </select>
+              </label>
+              <label htmlFor='returnFlex'>Return:
+                <select
+                  value={this.state.returnFlex}
+                  name='returnFlex'
+                  onChange={(event) => this.handleChange('returnFlex', event)}>
+                  <option value='0'>Exact</option>
+                  <option value='1'>+/- 1 Day</option>
+                  <option value='2'>+/- 2 Days</option>
+                  <option value='3'>+/- 3 Days</option>
+                </select>
+              </label>
+            </div>
+          </label>
 
-          <label>Layovers:</label>
-          <label htmlFor='layoverMin'>Minimum:</label>
-          <select
-            value={this.state.layoverMin}
-            name='layoverMin'
-            onChange={(event) => this.handleChange('layoverMin', event)}>
-            {this.buildHourDropDown()}
-          </select>
-          <label htmlFor='layoverMax'>Maximum:</label>
-          <select
-            value={this.state.layoverMax}
-            name='layoverMax'
-            onChange={(event) => this.handleChange('layoverMax', event)}>
-            {this.buildHourDropDown()}
-          </select>
+          <label>Layovers:
+            <div className='form-row'>
+              <label htmlFor='layoverMin'>Minimum:
+                <select
+                  value={this.state.layoverMin}
+                  name='layoverMin'
+                  onChange={(event) => this.handleChange('layoverMin', event)}>
+                  {this.buildHourDropDown()}
+                </select>
+              </label>
+              <label htmlFor='layoverMax'>Maximum:
+                <select
+                  value={this.state.layoverMax}
+                  name='layoverMax'
+                  onChange={(event) => this.handleChange('layoverMax', event)}>
+                  {this.buildHourDropDown()}
+                </select>
+              </label>
+            </div>
+          </label>
 
           <label htmlFor='connections'>
             Max number of connections each way:
+            <select
+              value={this.state.connections}
+              name='connections'
+              onChange={(event) => this.handleChange('connections', event)}>
+              <option value='0'>0</option>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='3'>3</option>
+              <option value='3'>4</option>
+              <option value='3'>5</option>
+            </select>
           </label>
-          <select
-            value={this.state.connections}
-            name='connections'
-            onChange={(event) => this.handleChange('connections', event)}>
-            <option value='0'>0</option>
-            <option value='1'>1</option>
-            <option value='2'>2</option>
-            <option value='3'>3</option>
-            <option value='3'>4</option>
-            <option value='3'>5</option>
-          </select>
 
           <label htmlFor='ratio'>
             For every 1 travel day how any days at your destination do you want?
+            <select
+              value={this.state.returnFlex}
+              name='ratio'
+              onChange={(event) => this.handleChange('ratio', event)}>
+              {this.buildRatioDropDown()}
+            </select>
           </label>
-          <select
-            value={this.state.returnFlex}
-            name='ratio'
-            onChange={(event) => this.handleChange('ratio', event)}>
-            {this.buildRatioDropDown()}
-          </select>
 
           <button type='submit'>
               Save
