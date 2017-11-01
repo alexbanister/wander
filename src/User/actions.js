@@ -11,3 +11,9 @@ export const SignUpAction = (user) => {
     user
   };
 };
+
+export const SignOutAction = () => {
+  return {
+    type: 'SIGN_OUT_ACTION'
+  };
+};

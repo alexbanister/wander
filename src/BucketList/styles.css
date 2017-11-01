@@ -9,25 +9,6 @@
   position: absolute;
   width: 100%; }
 
-.bucketlist .singleAirport {
-  background: #FFFFFF;
-  color: #384E5E;
-  border: 1px solid #384E5E;
-  cursor: pointer;
-  padding: .75em;
-  display: grid;
-  grid-template-columns: 3fr 6fr 1fr;
-  grid-template-areas: "iata name remove" "iata city remove"; }
-  .bucketlist .singleAirport:hover {
-    background: #F6D22F; }
-  .bucketlist .singleAirport .IATAcode {
-    grid-area: iata;
-    font-size: 2em; }
-  .bucketlist .singleAirport .airportName {
-    grid-area: name; }
-  .bucketlist .singleAirport .airportCity {
-    grid-area: city; }
-
 .bucketlist .destinationList {
   padding: 2em 1em; }
   .bucketlist .destinationList .singleAirport {

@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { savePreferences } from './actions';
+import { getAirportCodeByCity } from '../API/fetch';
+import AirportCard from '../AirportCard/';
 import PropTypes from 'prop-types';
 
 export class Preferences extends Component {
   constructor() {
     super();
     this.state = {
-      departureAirport: 'DEN',
+      departureAirport: '',
+      budget: 0,
       departFlex: '0',
       returnFlex: '0',
       layoverMin: '1',
       layoverMax: '3',
       connections: '2',
-      ratio: '1'
+      ratio: '1',
+      airports: []
     };
   }
 
@@ -27,6 +32,38 @@ export class Preferences extends Component {
   handleChange(field, event){
     this.setState({
       [field]: event.target.value
+    });
+  }
+
+  async handleDisplayAirports(event) {
+    const inputValue = event.target.value;
+    let airportList = [];
+    if (event.target.value.length > 2) {
+      airportList = await getAirportCodeByCity(event.target.value);
+    }
+    this.setState({
+      departureAirport: inputValue,
+      airports: airportList
+    });
+  }
+
+  handleSetHomeAirport(airport) {
+    this.setState({
+      departureAirport: airport.iata,
+      airports: []
+    });
+  }
+
+  displayAirportList(){
+    return this.state.airports.map( (airport, index) => {
+      return (
+        <AirportCard
+          airport={airport}
+          key={airport.iata + index}
+          removeFlag={false}
+          onClick={this.handleSetHomeAirport.bind(this, airport)}
+        />
+      );
     });
   }
 
@@ -54,6 +91,7 @@ export class Preferences extends Component {
     event.preventDefault();
     localStorage.setItem('travelPreferences', JSON.stringify(this.state));
     this.props.savePreferences(this.state);
+    this.props.history.push('/bucketList');
   }
 
   render() {
@@ -66,7 +104,21 @@ export class Preferences extends Component {
               value={this.state.departureAirport}
               name='departureAirport'
               placeholder='Departure Airport'
-              onChange={(event) => this.handleChange('departureAirport', event)}
+              onChange={(event) => this.handleDisplayAirports(event)}
+            />
+          </label>
+          <div className='airportListContainer'>
+            <div className='airportList'>
+              {this.displayAirportList(this.state.airports)}
+            </div>
+          </div>
+          <label htmlFor='budget'>Budget:
+            <input
+              type='text'
+              value={this.state.budget}
+              name='budget'
+              placeholder='$'
+              onChange={(event) => this.handleChange('budget', event)}
             />
           </label>
           <label>Default Flexibility:
@@ -153,6 +205,7 @@ export class Preferences extends Component {
 
 Preferences.propTypes ={
   savePreferences: PropTypes.func,
+  history: PropTypes.object,
   preferences: PropTypes.object
 };
 
@@ -166,4 +219,5 @@ const mapDispatchToProps = (dispatch) => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Preferences);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(Preferences));

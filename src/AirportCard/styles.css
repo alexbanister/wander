@@ -1,0 +1,27 @@
+.airportListContainer {
+  position: relative;
+  width: 100%; }
+
+.airportList {
+  position: absolute;
+  width: 100%; }
+
+.singleAirport {
+  font-size: 1rem;
+  background: #FFFFFF;
+  color: #384E5E;
+  border: 1px solid #384E5E;
+  cursor: pointer;
+  padding: .75em;
+  display: grid;
+  grid-template-columns: 3fr 6fr 1fr;
+  grid-template-areas: "iata name remove" "iata city remove"; }
+  .singleAirport:hover {
+    background: #F6D22F; }
+  .singleAirport .IATAcode {
+    grid-area: iata;
+    font-size: 2em; }
+  .singleAirport .airportName {
+    grid-area: name; }
+  .singleAirport .airportCity {
+    grid-area: city; }

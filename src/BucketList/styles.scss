@@ -12,29 +12,6 @@
     position: absolute;
     width: 100%;
   }
-  .singleAirport {
-    background: $background;
-    color: $body-dark;
-    border: 1px solid $body-dark;
-    cursor: pointer;
-    padding: .75em;
-    display: grid;
-    grid-template-columns: 3fr 6fr 1fr;
-    grid-template-areas: "iata name remove" "iata city remove";
-    &:hover {
-      background: $highlight;
-    }
-    .IATAcode {
-      grid-area: iata;
-      font-size: 2em;
-    }
-    .airportName {
-      grid-area: name;
-    }
-    .airportCity {
-      grid-area: city;
-    }
-  }
   .destinationList {
     padding: 2em 1em;
     .singleAirport {
