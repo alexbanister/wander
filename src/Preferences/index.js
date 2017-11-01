@@ -7,7 +7,7 @@ export class Preferences extends Component {
   constructor() {
     super();
     this.state = {
-      departureAirport: '',
+      departureAirport: 'DEN',
       departFlex: '0',
       returnFlex: '0',
       layoverMin: '1',
@@ -18,8 +18,9 @@ export class Preferences extends Component {
   }
 
   componentDidMount() {
-    if (this.props.preferences) {
-      this.setState(this.props.preferences);
+    const preferences = JSON.parse(localStorage.getItem('travelPreferences'));
+    if (preferences) {
+      this.setState(preferences);
     }
   }
 
@@ -51,6 +52,7 @@ export class Preferences extends Component {
 
   savePreferences(event) {
     event.preventDefault();
+    localStorage.setItem('travelPreferences', JSON.stringify(this.state));
     this.props.savePreferences(this.state);
   }
 
@@ -133,7 +135,7 @@ export class Preferences extends Component {
           <label htmlFor='ratio'>
             For every 1 travel day how any days at your destination do you want?
             <select
-              value={this.state.returnFlex}
+              value={this.state.ratio}
               name='ratio'
               onChange={(event) => this.handleChange('ratio', event)}>
               {this.buildRatioDropDown()}

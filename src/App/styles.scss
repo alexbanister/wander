@@ -26,6 +26,8 @@ a {
 }
 main {
   width: 65vw;
+  overflow-y: scroll;
+  height: 100vh;
   padding: 3em;
   background: $main-background;
 }

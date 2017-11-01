@@ -1,41 +1,53 @@
 @import "../variables.scss";
 
-.bucketlist {
-  input {
-    width: 75%;
-  }
-  button {
-    width: 25%;
-  }
-  .destinationList {
-    padding: 2em 1em;
-    .destinationCard {
+.search {
+  padding: 2em 1em;
+  .FlightCard {
+    color: $body-dark;
+    background: $background;
+    padding: .75em;
+    margin: 1em;
+    font-size: 1em;
+    box-shadow: $shadow;
+    @include horizontal-gradient(#F66295, #FAAD72);
+    .price {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: right;
+    }
+    .directionHeader {
       display: flex;
       justify-content: space-between;
-      color: $body-dark;
-      background: $background;
-      padding: .75em;
+      color: $background;
+      background: $body-light;
+      margin-top: 1em;
+      padding: .5em;
+    }
+    h3 {
+      width: 50%;
+      margin: 0;
+      display: inline-block;
+    }
+    h6 {
+      display: inline-block;
+      margin: 0 1em;
+    }
+    .top-row, .second-row{
+      display: flex;
+      justify-content: space-between;
+    }
+    .airport {
+      font-size: 1.75em;
+      font-weight: bold;
+    }
+    .layover {
+      text-align: center;
+      padding: .25em;
       margin: 1em;
-      font-size: 2em;
-      .airportCode {
-        width: 20%;
-        padding: 0 .5em;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      .cityName {
-        width: 100%;
-        padding: 0 .5em;
-      }
-      .destinationRemove {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        color: $background;
-        padding: 0 .25em;
-        border-radius: .25em;
-        @include linear-gradient($body-dark, $body-light);
+      border-top: 1px solid $body-dark;
+      border-bottom: 1px solid $body-dark;
+      h5 {
+        margin: 0;
       }
     }
   }

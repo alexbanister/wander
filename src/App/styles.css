@@ -23,6 +23,8 @@ a {
 
 main {
   width: 65vw;
+  overflow-y: scroll;
+  height: 100vh;
   padding: 3em;
   background: rgba(64, 95, 115, 0.4); }
 

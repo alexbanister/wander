@@ -1,37 +1,52 @@
 .bucketlist input {
-  width: 75%; }
+  width: 100%; }
 
-.bucketlist button {
-  width: 25%; }
+.bucketlist .airportListContainer {
+  position: relative;
+  width: 100%; }
+
+.bucketlist .airportList {
+  position: absolute;
+  width: 100%; }
+
+.bucketlist .singleAirport {
+  background: #FFFFFF;
+  color: #384E5E;
+  border: 1px solid #384E5E;
+  cursor: pointer;
+  padding: .75em;
+  display: grid;
+  grid-template-columns: 3fr 6fr 1fr;
+  grid-template-areas: "iata name remove" "iata city remove"; }
+  .bucketlist .singleAirport:hover {
+    background: #F6D22F; }
+  .bucketlist .singleAirport .IATAcode {
+    grid-area: iata;
+    font-size: 2em; }
+  .bucketlist .singleAirport .airportName {
+    grid-area: name; }
+  .bucketlist .singleAirport .airportCity {
+    grid-area: city; }
 
 .bucketlist .destinationList {
   padding: 2em 1em; }
-  .bucketlist .destinationList .destinationCard {
-    display: flex;
-    justify-content: space-between;
-    color: #384E5E;
-    background: #FFFFFF;
-    padding: .75em;
-    margin: 1em;
-    font-size: 2em; }
-    .bucketlist .destinationList .destinationCard .airportCode {
-      width: 20%;
-      padding: 0 .5em;
-      font-weight: bold;
-      text-transform: uppercase; }
-    .bucketlist .destinationList .destinationCard .cityName {
-      width: 100%;
-      padding: 0 .5em; }
-    .bucketlist .destinationList .destinationCard .destinationRemove {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #FFFFFF;
-      padding: 0 .25em;
-      border-radius: .25em;
-      background: #405F73;
-      background: -moz-linear-gradient(top, #405F73 0%, #384E5E 100%);
-      background: -webkit-linear-gradient(top, #405F73 0%, #384E5E 100%);
-      background: linear-gradient(to bottom, #405F73 0%, #384E5E 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 ); }
+  .bucketlist .destinationList .singleAirport {
+    margin: .5em;
+    cursor: default; }
+    .bucketlist .destinationList .singleAirport:hover {
+      background: #FFFFFF; }
+
+.bucketlist .destinationRemove {
+  grid-area: remove;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #FFFFFF;
+  padding: 0 .25em;
+  border-radius: .25em;
+  background: #405F73;
+  background: -moz-linear-gradient(top, #405F73 0%, #384E5E 100%);
+  background: -webkit-linear-gradient(top, #405F73 0%, #384E5E 100%);
+  background: linear-gradient(to bottom, #405F73 0%, #384E5E 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=0 ); }
