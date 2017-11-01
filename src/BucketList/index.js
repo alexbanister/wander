@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addDestination } from './actions';
+import { getAirportCodeByCity } from '../API/fetch';
 import PropTypes from 'prop-types';
 
 export class BucketList extends Component {
@@ -8,35 +9,55 @@ export class BucketList extends Component {
     super();
     this.state = {
       destination: '',
-      disabled: true
+      airports: []
     };
   }
 
-  handleAddDestination(event) {
-    event.preventDefault();
-    this.props.addDestination(this.state.destination);
+  handleAddDestination(airport) {
+    this.props.addDestination(airport);
     this.setState({
       destination: '',
-      disabled: true
+      airports: []
     });
   }
 
-  handleChange(field, event){
+  async handleChange(event){
+    const inputValue = event.target.value;
+    let airportList = [];
+    if (event.target.value.length > 2) {
+      airportList = await getAirportCodeByCity(event.target.value);
+    }
     this.setState({
-      [field]: event.target.value,
-      disabled: !this.state.destination
+      destination: inputValue,
+      airports: airportList
+    });
+  }
+
+  displayAirportList(){
+    return this.state.airports.map( airport => {
+      return (
+        <div
+          className='singleAirport'
+          key={airport.iata}
+          onClick={this.handleAddDestination.bind(this, airport)}>
+          <div className='IATAcode'>{airport.iata}</div>
+          <div className='airportName'>{airport.name}</div>
+          <div className='airportCity'>
+            {airport.city}, {airport.state.abbr}, {airport.country.name}
+          </div>
+        </div>
+      );
     });
   }
 
   displayDestinations(allDestinations) {
-    return allDestinations.map( (destination, index) => (
-      <div className='destinationCard' key={index}>
-        <span className='airportCode'>
-          CDG
-        </span>
-        <span className='cityName'>
-          {destination}
-        </span>
+    return allDestinations.map( (airport, index) => (
+      <div className='singleAirport' key={index}>
+        <div className='IATAcode'>{airport.iata}</div>
+        <div className='airportName'>{airport.name}</div>
+        <div className='airportCity'>
+          {airport.city}, {airport.state.abbr}, {airport.country.name}
+        </div>
         <span className='destinationRemove'>
           X
         </span>
@@ -51,14 +72,15 @@ export class BucketList extends Component {
           <input
             type='text'
             value={this.state.destination}
-            placeholder='Destination'
-            onChange={(event) => this.handleChange('destination', event)}
+            placeholder='Add Destination'
+            onChange={(event) => this.handleChange(event)}
           />
-          <button type='submit'
-            disabled={this.state.disabled}>
-              Add Destination
-          </button>
         </form>
+        <div className='airportListContainer'>
+          <div className='airportList'>
+            {this.displayAirportList(this.state.airports)}
+          </div>
+        </div>
         <div className='destinationList'>
           {this.displayDestinations(this.props.destinations)}
         </div>

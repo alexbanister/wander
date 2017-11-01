@@ -2,41 +2,58 @@
 
 .bucketlist {
   input {
-    width: 75%;
+    width: 100%;
   }
-  button {
-    width: 25%;
+  .airportListContainer {
+    position: relative;
+    width: 100%;
+  }
+  .airportList {
+    position: absolute;
+    width: 100%;
+  }
+  .singleAirport {
+    background: $background;
+    color: $body-dark;
+    border: 1px solid $body-dark;
+    cursor: pointer;
+    padding: .75em;
+    display: grid;
+    grid-template-columns: 3fr 6fr 1fr;
+    grid-template-areas: "iata name remove" "iata city remove";
+    &:hover {
+      background: $highlight;
+    }
+    .IATAcode {
+      grid-area: iata;
+      font-size: 2em;
+    }
+    .airportName {
+      grid-area: name;
+    }
+    .airportCity {
+      grid-area: city;
+    }
   }
   .destinationList {
     padding: 2em 1em;
-    .destinationCard {
-      display: flex;
-      justify-content: space-between;
-      color: $body-dark;
-      background: $background;
-      padding: .75em;
-      margin: 1em;
-      font-size: 2em;
-      .airportCode {
-        width: 20%;
-        padding: 0 .5em;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-      .cityName {
-        width: 100%;
-        padding: 0 .5em;
-      }
-      .destinationRemove {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        color: $background;
-        padding: 0 .25em;
-        border-radius: .25em;
-        @include linear-gradient($body-dark, $body-light);
+    .singleAirport {
+      margin: .5em;
+      cursor: default;
+      &:hover {
+        background: $background;
       }
     }
+  }
+  .destinationRemove {
+    grid-area: remove;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: $background;
+    padding: 0 .25em;
+    border-radius: .25em;
+    @include linear-gradient($body-dark, $body-light);
   }
 }
