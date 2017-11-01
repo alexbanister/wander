@@ -18,7 +18,7 @@ export class LogIn extends Component {
       email: this.state.email,
       id: 1
     });
-    this.props.history.push('/');
+    this.props.history.push('/preferences');
   }
 
   handleChange(field, event){

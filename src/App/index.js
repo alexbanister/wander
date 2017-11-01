@@ -23,6 +23,10 @@ class App extends Component {
             component={User}
             key='Login'/>
           <Route
+            exact path='/signOut'
+            render={()=> <User signOut={true} />}
+            key='signOut'/>
+          <Route
             exact path='/signup'
             render={()=> <User form='signup' />}
             key='signup'/>

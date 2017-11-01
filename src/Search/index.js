@@ -4,81 +4,46 @@ import { updateSearchResults } from './actions';
 import { savePreferences } from '../Preferences/actions';
 import { getFlights } from '../API/fetch.js';
 import { cleanData } from '../API/utilAPI';
+import FlightCard from '../FlightCard/';
 import PropTypes from 'prop-types';
 
 export class Search extends Component {
+  constructor() {
+    super();
+    this.state = {
+      departureDate: '',
+      returnDate: ''
+    };
+  }
+
   componentDidMount() {
     const preferences = JSON.parse(localStorage.getItem('travelPreferences'));
     if (!this.props.preferences.departureAirport) {
       this.props.savePreferences(preferences);
     }
-    this.props.updateSearchResults(cleanData(getFlights(), preferences));
   }
 
-  buildOneWay(flights) {
-    return flights.map( (flight, index) => {
-      const layover = flight.layover ? (
-        <div className='layover'>
-          <h5>Layover</h5>
-          {flight.layover}
-        </div>
-      ) : '';
-      return (
-        <div className='oneway' key={`oneway${index}`}>
-          <div className='top-row'>
-            <span className='airport'>
-              {flight.origin}
-              <h6>{flight.originCity}</h6>
-            </span>
-            <span className='flightNumber'>
-              {flight.flightNumber}
-            </span>
-            <span className='airport'>
-              <h6>{flight.destinationCity}</h6>
-              {flight.destination}
-            </span>
-          </div>
-          <div className='second-row'>
-            <span className='time'>
-              {flight.departureTime}
-            </span>
-            <span className='flightTime'>
-              {flight.flightDuration}
-            </span>
-            <span className='time'>
-              {flight.arrivalTime}
-            </span>
-          </div>
-          {layover}
-        </div>
-      );
+  searchFlights(event) {
+    event.preventDefault();
+    this.props.updateSearchResults(
+      cleanData(getFlights(),
+        this.props.preferences,
+        this.props.bucketList,
+        this.state));
+  }
+
+  handleChangeDate(field, event){
+    this.setState({
+      [field]: event.target.value
     });
   }
 
   buildTripCard(allFlights) {
     return allFlights.map( (itinerary, index) => {
       return (
-        <div key={index} className='FlightCard'>
-          <div className='price'>
-            {itinerary.price}
-          </div>
-          <div className='flights'>
-            <div className='directionHeader'>
-              <h3>Depart</h3>
-              {itinerary.outbound.flightDuration}
-            </div>
-            <div>
-              {this.buildOneWay(itinerary.outbound.flights)}
-            </div>
-            <div className='directionHeader'>
-              <h3>Return</h3>
-              {itinerary.inbound.flightDuration}
-            </div>
-            <div>
-              {this.buildOneWay(itinerary.inbound.flights)}
-            </div>
-          </div>
-        </div>
+        <FlightCard
+          itinerary={itinerary}
+          key={itinerary.price + index}/>
       );
     });
   }
@@ -86,7 +51,30 @@ export class Search extends Component {
   render() {
     return (
       <div className='search'>
-        {this.buildTripCard(this.props.searchResults)}
+        <div className='searchForm'>
+          <form onSubmit={this.searchFlights.bind(this)}>
+            <span className='depart'>
+              <label htmlFor='departureDate'>Depart:</label>
+              <input
+                type="date"
+                name="departureDate"
+                onChange={this.handleChangeDate.bind(this, 'departureDate')}/>
+            </span>
+            <span className='return'>
+              <label htmlFor='returnDate'>Return:</label>
+              <input
+                type="date"
+                name="returnDate"
+                onChange={this.handleChangeDate.bind(this, 'returnDate')}/>
+            </span>
+            <div className='sendSearch'>
+              <button>Search</button>
+            </div>
+          </form>
+        </div>
+        <div className='searchResults'>
+          {this.buildTripCard(this.props.searchResults)}
+        </div>
       </div>
     );
   }
@@ -96,10 +84,12 @@ Search.propTypes ={
   updateSearchResults: PropTypes.func,
   savePreferences: PropTypes.func,
   searchResults: PropTypes.array,
+  bucketList: PropTypes.array,
   preferences: PropTypes.object
 };
 
 const mapStateToProps =  (store) => ({
+  bucketList: store.bucketList,
   searchResults: store.searchResults,
   preferences: store.preferences
 });

@@ -1,46 +1,21 @@
 .search {
   padding: 2em 1em; }
-  .search .FlightCard {
-    color: #384E5E;
-    background: #FFFFFF;
-    padding: .75em;
-    margin: 1em;
-    font-size: 1em;
-    box-shadow: 5px 5px 25px #384E5E;
-    background: #FAAD72;
-    background: -moz-linear-gradient(left, #FAAD72 0%, #F66295 100%);
-    background: -webkit-linear-gradient(left, #FAAD72 0%, #F66295 100%);
-    background: linear-gradient(to right, #FAAD72 0%, #F66295 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
-    .search .FlightCard .price {
-      font-size: 1.5em;
-      font-weight: bold;
-      text-align: right; }
-    .search .FlightCard .directionHeader {
-      display: flex;
-      justify-content: space-between;
-      color: #FFFFFF;
-      background: #405F73;
-      margin-top: 1em;
-      padding: .5em; }
-    .search .FlightCard h3 {
-      width: 50%;
-      margin: 0;
-      display: inline-block; }
-    .search .FlightCard h6 {
-      display: inline-block;
-      margin: 0 1em; }
-    .search .FlightCard .top-row, .search .FlightCard .second-row {
-      display: flex;
-      justify-content: space-between; }
-    .search .FlightCard .airport {
-      font-size: 1.75em;
-      font-weight: bold; }
-    .search .FlightCard .layover {
-      text-align: center;
-      padding: .25em;
-      margin: 1em;
-      border-top: 1px solid #384E5E;
-      border-bottom: 1px solid #384E5E; }
-      .search .FlightCard .layover h5 {
-        margin: 0; }
+  .search form {
+    width: 80%;
+    font-size: 1.3em;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+  .search label {
+    display: block; }
+  .search input {
+    padding: .25em;
+    margin: .5em; }
+  .search button {
+    width: 50%;
+    margin: 1em; }
+  .search .sendSearch {
+    width: 100%;
+    text-align: center; }
