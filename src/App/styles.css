@@ -26,7 +26,7 @@ main {
   overflow-y: scroll;
   height: 100vh;
   padding: 3em;
-  background: rgba(64, 95, 115, 0.4); }
+  background: rgba(64, 95, 115, 0.6); }
 
 input, button, select {
   font-size: 1.25rem;

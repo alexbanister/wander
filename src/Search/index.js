@@ -11,8 +11,8 @@ export class Search extends Component {
   constructor() {
     super();
     this.state = {
-      departureDate: '',
-      returnDate: ''
+      departureDate: '2017-12-24',
+      returnDate: '2018-01-03'
     };
   }
 
@@ -26,9 +26,8 @@ export class Search extends Component {
   searchFlights(event) {
     event.preventDefault();
     this.props.updateSearchResults(
-      cleanData(getFlights(),
+      cleanData(getFlights(this.props.bucketList),
         this.props.preferences,
-        this.props.bucketList,
         this.state));
   }
 
@@ -58,6 +57,7 @@ export class Search extends Component {
               <input
                 type="date"
                 name="departureDate"
+                value={this.state.departureDate}
                 onChange={this.handleChangeDate.bind(this, 'departureDate')}/>
             </span>
             <span className='return'>
@@ -65,6 +65,7 @@ export class Search extends Component {
               <input
                 type="date"
                 name="returnDate"
+                value={this.state.returnDate}
                 onChange={this.handleChangeDate.bind(this, 'returnDate')}/>
             </span>
             <div className='sendSearch'>
