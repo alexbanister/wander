@@ -47,7 +47,7 @@ const FlightCard = ({ itinerary }) => {
   return (
     <div key={itinerary.price + Math.random()} className='FlightCard'>
       <div className='price'>
-        {itinerary.price} --- {itinerary.score}
+        {itinerary.price} --- {itinerary.score}%
       </div>
       <div className='flights'>
         <div className='directionHeader'>
