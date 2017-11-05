@@ -1,122 +1,57 @@
-import * as actions from './SignUpAction';
-import * as reducers from './SignUpReducer';
-import { shallow, mount } from 'enzyme';
-import configureStore from 'redux-mock-store';
-import SignUpContainer, { SignUp } from './SignUp';
-import createRouterContext from 'react-router-test-context';
-import PropTypes from 'prop-types';
-import React from 'react';
+import * as actions from './actions';
 
-describe('Login action', ()=>{
+describe('BucketList action', ()=>{
+  const destination = {
+    "name": "Denver International Airport ",
+    "city": "Denver",
+    "iata": "DEN",
+    "country": {
+      "name": "United States",
+      "iso": "US"
+    },
+    "state": {
+      "name": "Colorado",
+      "abbr": "CO"
+    }
+  };
 
-  it('SignUpAction should take object return an action', () => {
-    const newUser = {
-      name: 'Mr. Mike',
-      email: 'Mr.Mike@Mr.Mike.com',
-      password: 'Password'
-    };
+  it('addDestination should take object return an action', () => {
     const expected = {
-      type: 'SIGN_UP_ACTION',
-      newUser: {
-        name: 'Mr. Mike',
-        email: 'Mr.Mike@Mr.Mike.com',
-        password: 'Password'
+      type: 'ADD_DESTINATION_ACTION',
+      destination: {
+        "name": "Denver International Airport ",
+        "city": "Denver",
+        "iata": "DEN",
+        "country": {
+          "name": "United States",
+          "iso": "US"
+        },
+        "state": {
+          "name": "Colorado",
+          "abbr": "CO"
+        }
       }
     };
-
-    expect(actions.SignUpAction(newUser)).toEqual(expected);
-  });
-});
-
-describe('CardCatalog Reducers', () => {
-  it('newUser should set default state', () => {
-    const expectation = {};
-
-    expect(reducers.newUser(undefined, {})).toEqual(expectation);
+    expect(actions.addDestination(destination)).toEqual(expected);
   });
 
-  it('SIGN_UP_ACTION should add a new user to state', () => {
-    const action = {
-      type: 'SIGN_UP_ACTION',
-      newUser: {
-        name: 'Mr. Mike',
-        email: 'Mr.Mike@Mr.Mike.com',
-        password: 'Password'
+  it('removeDestination should take object return an action', () => {
+    const expected = {
+      type: 'REMOVE_DESTINATION_ACTION',
+      destination: {
+        "name": "Denver International Airport ",
+        "city": "Denver",
+        "iata": "DEN",
+        "country": {
+          "name": "United States",
+          "iso": "US"
+        },
+        "state": {
+          "name": "Colorado",
+          "abbr": "CO"
+        }
       }
     };
-    const expectation = action.newUser;
-
-    expect(reducers.newUser(undefined, action)).toEqual(expectation);
-  });
-});
-
-describe('SignUp snapshot', () => {
-
-  it('should always match the snapshot', () => {
-    const mockStore = configureStore();
-    const initialState = {
-      user: {}
-    };
-    const store = mockStore(initialState);
-    const wrapper = shallow(<SignUpContainer
-      store = {store}
-    />);
-
-    expect(wrapper).toMatchSnapshot();
-
-  });
-});
-
-describe('SignUp container', () => {
-
-  it('should have default state', () => {
-    const mockStore = configureStore();
-    const initialState = {
-      user: {}
-    };
-    const store = mockStore(initialState);
-    const context = createRouterContext();
-    const childContextTypes = {
-      router: PropTypes.object
-    };
-    const wrapper = mount(<SignUpContainer
-      store={store}
-      users={{users: {}}}
-    />, {context, childContextTypes});
-
-    expect(wrapper.instance().props.users).toEqual({users: {}});
-
-  });
-});
-
-describe('SignUp state', () => {
-  it('should have default state', () => {
-    const context = createRouterContext();
-    const initialState = {};
-    const expected = {
-      name: 'Yung-Jhun',
-      email: 'Yung@Jhun.tacos',
-      password: 'complete',
-      retypePassword: 'complete',
-      signUpError: false,
-      disabled: false,
-      passwordValidationError: false
-    };
-
-    const wrapper = shallow(<SignUp
-      user={initialState}
-    />, context);
-
-    const name = wrapper.find('[type="text"]');
-    const email = wrapper.find('[type="email"]');
-    const password = wrapper.find('[type="password"]').first();
-    const rePassword = wrapper.find('[type="password"]').last();
-
-    name.simulate('change', {target: {value: 'Yung-Jhun'}});
-    email.simulate('change', {target: {value: 'Yung@Jhun.tacos'}});
-    password.simulate('change', {target: {value: 'complete'}});
-    rePassword.simulate('change', {target: {value: 'complete'}});
-
-    expect(wrapper.state()).toEqual(expected);
+    expect(actions.removeDestination(destination)).toEqual(expected);
   });
 });

@@ -25,6 +25,7 @@ export class BucketList extends Component {
 
   handleSubmitForm(event) {
     event.preventDefault();
+    console.log('HERE');
     this.props.addDestination(this.state.airports[0]);
     this.setState({
       destination: '',
