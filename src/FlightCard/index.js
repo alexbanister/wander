@@ -45,7 +45,10 @@ const FlightCard = ({ itinerary }) => {
   };
 
   return (
-    <div key={itinerary.price + Math.random()} className={`flightCard percent${Math.floor(itinerary.score / 10) * 10}`}>
+    <div key={itinerary.price +
+      itinerary.score +
+      itinerary.outbound.flightDuration +
+      itinerary.inbound.flightDuration} className={`flightCard percent${Math.floor(itinerary.score / 10) * 10}`}>
       <div className='price'>
         {itinerary.price}
       </div>
