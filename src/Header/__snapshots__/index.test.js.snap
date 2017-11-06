@@ -4,7 +4,7 @@ exports[`Header should always match the snapshot when logged in 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(Header)
+  Symbol(enzyme.__unrendered__): <withRouter(Connect(Header))
     store={
         Object {
             "clearActions": [Function],
@@ -26,37 +26,9 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": null,
-    "nodeType": "function",
+    "nodeType": "class",
     "props": Object {
-      "dispatch": [Function],
-      "isLoggedIn": true,
-      "store": Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      },
-      "storeSubscription": Subscription {
-        "listeners": Object {
-          "clear": [Function],
-          "get": [Function],
-          "notify": [Function],
-          "subscribe": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "clearActions": [Function],
-          "dispatch": [Function],
-          "getActions": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "unsubscribe": [Function],
-      },
+      "render": [Function],
     },
     "ref": null,
     "rendered": null,
@@ -66,37 +38,9 @@ ShallowWrapper {
     Object {
       "instance": null,
       "key": null,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
-        "dispatch": [Function],
-        "isLoggedIn": true,
-        "store": Object {
-          "clearActions": [Function],
-          "dispatch": [Function],
-          "getActions": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "storeSubscription": Subscription {
-          "listeners": Object {
-            "clear": [Function],
-            "get": [Function],
-            "notify": [Function],
-            "subscribe": [Function],
-          },
-          "onStateChange": [Function],
-          "parentSub": undefined,
-          "store": Object {
-            "clearActions": [Function],
-            "dispatch": [Function],
-            "getActions": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-          },
-          "unsubscribe": [Function],
-        },
+        "render": [Function],
       },
       "ref": null,
       "rendered": null,
@@ -117,7 +61,7 @@ exports[`Header should always match the snapshot when logged out 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Connect(Header)
+  Symbol(enzyme.__unrendered__): <withRouter(Connect(Header))
     store={
         Object {
             "clearActions": [Function],
@@ -139,37 +83,9 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": null,
-    "nodeType": "function",
+    "nodeType": "class",
     "props": Object {
-      "dispatch": [Function],
-      "isLoggedIn": false,
-      "store": Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      },
-      "storeSubscription": Subscription {
-        "listeners": Object {
-          "clear": [Function],
-          "get": [Function],
-          "notify": [Function],
-          "subscribe": [Function],
-        },
-        "onStateChange": [Function],
-        "parentSub": undefined,
-        "store": Object {
-          "clearActions": [Function],
-          "dispatch": [Function],
-          "getActions": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "unsubscribe": [Function],
-      },
+      "render": [Function],
     },
     "ref": null,
     "rendered": null,
@@ -179,37 +95,9 @@ ShallowWrapper {
     Object {
       "instance": null,
       "key": null,
-      "nodeType": "function",
+      "nodeType": "class",
       "props": Object {
-        "dispatch": [Function],
-        "isLoggedIn": false,
-        "store": Object {
-          "clearActions": [Function],
-          "dispatch": [Function],
-          "getActions": [Function],
-          "getState": [Function],
-          "replaceReducer": [Function],
-          "subscribe": [Function],
-        },
-        "storeSubscription": Subscription {
-          "listeners": Object {
-            "clear": [Function],
-            "get": [Function],
-            "notify": [Function],
-            "subscribe": [Function],
-          },
-          "onStateChange": [Function],
-          "parentSub": undefined,
-          "store": Object {
-            "clearActions": [Function],
-            "dispatch": [Function],
-            "getActions": [Function],
-            "getState": [Function],
-            "replaceReducer": [Function],
-            "subscribe": [Function],
-          },
-          "unsubscribe": [Function],
-        },
+        "render": [Function],
       },
       "ref": null,
       "rendered": null,

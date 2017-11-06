@@ -17,11 +17,189 @@ ShallowWrapper {
     "key": null,
     "nodeType": "host",
     "props": Object {
-      "children": "Welcome to Wander, We do stuff",
+      "children": Array [
+        <h3>
+          Make your Bucket List,
+</h3>,
+        <h3>
+          your completed list
+</h3>,
+        <p>
+          One place to save all the places you want to go and quickly searchfor flights to all your destinations at one. You decide when you havetime to travel and how you want to travel and we'll show you all youroptions and how well they match what you want.
+</p>,
+        <div
+          className="auth"
+>
+          <span
+                    className="form-block"
+          >
+                    <h4>
+                              Login
+                    </h4>
+                    <Connect(User) />
+          </span>
+          <span
+                    className="form-block"
+          >
+                    <h4>
+                              Signup
+                    </h4>
+                    <Connect(User)
+                              form="signup"
+                    />
+          </span>
+</div>,
+      ],
       "className": "welcome",
     },
     "ref": null,
-    "rendered": "Welcome to Wander, We do stuff",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Make your Bucket List,",
+        },
+        "ref": null,
+        "rendered": "Make your Bucket List,",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "your completed list",
+        },
+        "ref": null,
+        "rendered": "your completed list",
+        "type": "h3",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "One place to save all the places you want to go and quickly searchfor flights to all your destinations at one. You decide when you havetime to travel and how you want to travel and we'll show you all youroptions and how well they match what you want.",
+        },
+        "ref": null,
+        "rendered": "One place to save all the places you want to go and quickly searchfor flights to all your destinations at one. You decide when you havetime to travel and how you want to travel and we'll show you all youroptions and how well they match what you want.",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <span
+              className="form-block"
+>
+              <h4>
+                            Login
+              </h4>
+              <Connect(User) />
+</span>,
+            <span
+              className="form-block"
+>
+              <h4>
+                            Signup
+              </h4>
+              <Connect(User)
+                            form="signup"
+              />
+</span>,
+          ],
+          "className": "auth",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h4>
+                  Login
+</h4>,
+                <Connect(User) />,
+              ],
+              "className": "form-block",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Login",
+                },
+                "ref": null,
+                "rendered": "Login",
+                "type": "h4",
+              },
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {},
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "span",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h4>
+                  Signup
+</h4>,
+                <Connect(User)
+                  form="signup"
+/>,
+              ],
+              "className": "form-block",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Signup",
+                },
+                "ref": null,
+                "rendered": "Signup",
+                "type": "h4",
+              },
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "class",
+                "props": Object {
+                  "form": "signup",
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+            ],
+            "type": "span",
+          },
+        ],
+        "type": "div",
+      },
+    ],
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -30,11 +208,189 @@ ShallowWrapper {
       "key": null,
       "nodeType": "host",
       "props": Object {
-        "children": "Welcome to Wander, We do stuff",
+        "children": Array [
+          <h3>
+            Make your Bucket List,
+</h3>,
+          <h3>
+            your completed list
+</h3>,
+          <p>
+            One place to save all the places you want to go and quickly searchfor flights to all your destinations at one. You decide when you havetime to travel and how you want to travel and we'll show you all youroptions and how well they match what you want.
+</p>,
+          <div
+            className="auth"
+>
+            <span
+                        className="form-block"
+            >
+                        <h4>
+                                    Login
+                        </h4>
+                        <Connect(User) />
+            </span>
+            <span
+                        className="form-block"
+            >
+                        <h4>
+                                    Signup
+                        </h4>
+                        <Connect(User)
+                                    form="signup"
+                        />
+            </span>
+</div>,
+        ],
         "className": "welcome",
       },
       "ref": null,
-      "rendered": "Welcome to Wander, We do stuff",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Make your Bucket List,",
+          },
+          "ref": null,
+          "rendered": "Make your Bucket List,",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "your completed list",
+          },
+          "ref": null,
+          "rendered": "your completed list",
+          "type": "h3",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "One place to save all the places you want to go and quickly searchfor flights to all your destinations at one. You decide when you havetime to travel and how you want to travel and we'll show you all youroptions and how well they match what you want.",
+          },
+          "ref": null,
+          "rendered": "One place to save all the places you want to go and quickly searchfor flights to all your destinations at one. You decide when you havetime to travel and how you want to travel and we'll show you all youroptions and how well they match what you want.",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <span
+                className="form-block"
+>
+                <h4>
+                                Login
+                </h4>
+                <Connect(User) />
+</span>,
+              <span
+                className="form-block"
+>
+                <h4>
+                                Signup
+                </h4>
+                <Connect(User)
+                                form="signup"
+                />
+</span>,
+            ],
+            "className": "auth",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h4>
+                    Login
+</h4>,
+                  <Connect(User) />,
+                ],
+                "className": "form-block",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Login",
+                  },
+                  "ref": null,
+                  "rendered": "Login",
+                  "type": "h4",
+                },
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {},
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "span",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h4>
+                    Signup
+</h4>,
+                  <Connect(User)
+                    form="signup"
+/>,
+                ],
+                "className": "form-block",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Signup",
+                  },
+                  "ref": null,
+                  "rendered": "Signup",
+                  "type": "h4",
+                },
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "class",
+                  "props": Object {
+                    "form": "signup",
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+              ],
+              "type": "span",
+            },
+          ],
+          "type": "div",
+        },
+      ],
       "type": "div",
     },
   ],
