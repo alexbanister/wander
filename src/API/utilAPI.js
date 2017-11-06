@@ -14,20 +14,12 @@ export const cleanData = (rawReturnArray, preferences, dates) => {
   allFlights.locationData.airport = Array.from(allFlights.locationData.airport);
   allFlights.locationData.city = Array.from(allFlights.locationData.city);
 
-  console.log(allFlights);
-  // return []
   return allFlights.flights.map( itinerary => (
     cleanItinerary(itinerary, allFlights.locationData, preferences, dates))
-  ).sort( (a, b) => b.score - a.score);
+  ).sort( (alpha, beta) => beta.score - alpha.score);
 };
 
-const checkForDups = (newItem, array) => {
-  const filtered = array.filter( oldItem => oldItem.code === newItem.code )
-  console.log(filtered);
-  return filtered.length > 0 ? false : true;
-}
-
-const cleanItinerary = (flight, locations, preferences, dates) => {
+export const cleanItinerary = (flight, locations, preferences, dates) => {
   return {
     price: flight.saleTotal.replace('USD', '$'),
     outbound: {
@@ -44,7 +36,7 @@ const cleanItinerary = (flight, locations, preferences, dates) => {
   };
 };
 
-const buildSegments = (segments, locations) => {
+export const buildSegments = (segments, locations) => {
   return segments.map( flight => {
     const flightObj = {
       origin: flight.leg[0].origin,
@@ -66,63 +58,7 @@ const buildSegments = (segments, locations) => {
   });
 };
 
-const scoreDates = (actualDate, preferedDate, flexibility) => {
-  const oneDay = 24*60*60*1000;
-  const diffPoints =
-     (Math.round(Math.abs((actualDate - preferedDate)/oneDay)))
-     / parseInt(flexibility, 10);
-  return diffPoints > 1 ? 1 : Math.abs(diffPoints - 1);
-};
-
-const scoreBudget = (actualCost, budget) => {
-  return budget > actualCost ? 1 : Math.abs(((actualCost - budget) / budget) - 1);
-};
-
-const scoreLayover = (preferedMin, perferedMax, flights) => {
-  const allLayovers = flights.reduce( (accum, slice) => {
-    slice.segment.forEach( segment => {
-      if (segment.connectionDuration) {
-        accum.push(segment.connectionDuration / 60);
-      }
-    });
-    return accum;
-  }, []);
-  const tooLong = allLayovers.filter( layover => layover > perferedMax )
-    .map( layover => layover / perferedMax );
-  const tooShort = allLayovers.filter( layover => layover < preferedMin )
-    .map( layover => layover / preferedMin );
-  const allScores = [...tooLong, ...tooShort];
-  const totalScore = allScores.length > 0 ?
-    allScores.reduce( (accum, score) => accum + score, 0) / allScores.length : 1;
-  return totalScore > 1 ? 1 : totalScore;
-};
-
-const scoreConnections = (flights, prefConnections) => {
-  const connectionCounts = flights.reduce( (accum, oneWay) => {
-    return [...accum, oneWay.segment.length];
-  }, []);
-  const connectionScores = connectionCounts.filter( connections => connections > prefConnections )
-    .map( connection => prefConnections / connection );
-  const totalScore = connectionScores.length > 0 ?
-    connectionScores.reduce( (accum, score) => (accum + score) / 2, 0) : 1;
-
-  return totalScore > 1 ? 1 : totalScore;
-};
-
-const vactionDaysRatioScore = (flights, prefRatio) => {
-  const oneDay = 24*60*60*1000;
-  const travelDays = flights.slice.reduce( (accum, flight) => {
-    return accum + Math.ceil((flight.duration / 60) / 24);
-  }, 0);
-  const timeOnHoliday = Math.floor((
-    new Date(flights.slice.last().segment[0].leg[0].departureTime).getTime() -
-    new Date(flights.slice[0].segment.last().leg.last().arrivalTime).getTime())
-    / oneDay);
-  const actualRatio =  timeOnHoliday / travelDays;
-  return actualRatio > prefRatio ? 1 : actualRatio / prefRatio;
-};
-
-const getItineraryScore = (flight, preferences, dates) => {
+export const getItineraryScore = (flight, preferences, dates) => {
   const departScore = scoreDates(
     new Date(flight.slice[0].segment[0].leg[0].departureTime.split('T')[0]).getTime(),
     new Date(dates.departureDate).getTime(),
@@ -154,7 +90,63 @@ const getItineraryScore = (flight, preferences, dates) => {
   ) / 6) * 100);
 };
 
-const getCityName = (airport, locations) => {
+export const scoreDates = (actualDate, preferedDate, flexibility) => {
+  const oneDay = 24*60*60*1000;
+  const diffPoints =
+     (Math.round(Math.abs((actualDate - preferedDate)/oneDay)))
+     / parseInt(flexibility, 10);
+  return diffPoints > 1 ? 1 : Math.abs(diffPoints - 1);
+};
+
+export const scoreBudget = (actualCost, budget) => {
+  return budget > actualCost ? 1 : Math.abs(((actualCost - budget) / budget) - 1);
+};
+
+export const scoreLayover = (preferedMin, perferedMax, flights) => {
+  const allLayovers = flights.reduce( (accum, slice) => {
+    slice.segment.forEach( segment => {
+      if (segment.connectionDuration) {
+        accum.push(segment.connectionDuration / 60);
+      }
+    });
+    return accum;
+  }, []);
+  const tooLong = allLayovers.filter( layover => layover > perferedMax )
+    .map( layover => layover / perferedMax );
+  const tooShort = allLayovers.filter( layover => layover < preferedMin )
+    .map( layover => layover / preferedMin );
+  const allScores = [...tooLong, ...tooShort];
+  const totalScore = allScores.length > 0 ?
+    allScores.reduce( (accum, score) => accum + score, 0) / allScores.length : 1;
+  return totalScore > 1 ? 1 : totalScore;
+};
+
+export const scoreConnections = (flights, prefConnections) => {
+  const connectionCounts = flights.reduce( (accum, oneWay) => {
+    return [...accum, oneWay.segment.length];
+  }, []);
+  const connectionScores = connectionCounts.filter( connections => connections > prefConnections )
+    .map( connection => prefConnections / connection );
+  const totalScore = connectionScores.length > 0 ?
+    connectionScores.reduce( (accum, score) => (accum + score) / 2, 0) : 1;
+
+  return totalScore > 1 ? 1 : totalScore;
+};
+
+export const vactionDaysRatioScore = (flights, prefRatio) => {
+  const oneDay = 24*60*60*1000;
+  const travelDays = flights.slice.reduce( (accum, flight) => {
+    return accum + Math.ceil((flight.duration / 60) / 24);
+  }, 0);
+  const timeOnHoliday = Math.floor((
+    new Date(flights.slice.last().segment[0].leg[0].departureTime).getTime() -
+    new Date(flights.slice[0].segment.last().leg.last().arrivalTime).getTime())
+    / oneDay);
+  const actualRatio =  timeOnHoliday / travelDays;
+  return actualRatio > prefRatio ? 1 : actualRatio / prefRatio;
+};
+
+export const getCityName = (airport, locations) => {
   const cityCode = locations.airport.filter(
     location => location.code === airport
   );
@@ -164,13 +156,13 @@ const getCityName = (airport, locations) => {
   return cityName[0].name;
 };
 
-const calcTravelTime = duration => {
+export const calcTravelTime = duration => {
   const hours = Math.floor(duration / 60);
-  const minutes = duration % hours;
+  const minutes = duration % 60;
   return `${hours}hrs ${minutes}mins`;
 };
 
-const makeTimeReadable = time => {
+export const makeTimeReadable = time => {
   const options = {
     weekday: 'short',
     year: '2-digit',

@@ -1,43 +1,107 @@
-.FlightCard {
+.flightCard {
   color: #384E5E;
-  background: #FFFFFF;
   padding: .75em;
   margin: 1em;
-  font-size: 1em;
-  background: #FAAD72;
-  background: -moz-linear-gradient(left, #FAAD72 0%, #F66295 100%);
-  background: -webkit-linear-gradient(left, #FAAD72 0%, #F66295 100%);
-  background: linear-gradient(to right, #FAAD72 0%, #F66295 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
-  .FlightCard .price {
+  font-size: 1em; }
+  .flightCard .price {
     font-size: 1.5em;
     font-weight: bold;
     text-align: right; }
-  .FlightCard .directionHeader {
+  .flightCard .directionHeader {
     display: flex;
     justify-content: space-between;
     color: #FFFFFF;
     background: #405F73;
     margin-top: 1em;
     padding: .5em; }
-  .FlightCard h3 {
+  .flightCard h3 {
     width: 50%;
     margin: 0;
     display: inline-block; }
-  .FlightCard h6 {
+  .flightCard h6 {
     display: inline-block;
     margin: 0 1em; }
-  .FlightCard .top-row, .FlightCard .second-row {
+  .flightCard .top-row, .flightCard .second-row {
     display: flex;
     justify-content: space-between; }
-  .FlightCard .airport {
+  .flightCard .airport {
     font-size: 1.75em;
     font-weight: bold; }
-  .FlightCard .layover {
+  .flightCard .layover {
     text-align: center;
     padding: .25em;
     margin: 1em;
     border-top: 1px solid #384E5E;
     border-bottom: 1px solid #384E5E; }
-    .FlightCard .layover h5 {
+    .flightCard .layover h5 {
       margin: 0; }
+
+.percent10 {
+  background: #f66262;
+  background: -moz-linear-gradient(left, #f66262 0%, #d93c3c 100%);
+  background: -webkit-linear-gradient(left, #f66262 0%, #d93c3c 100%);
+  background: linear-gradient(to right, #f66262 0%, #d93c3c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
+
+.percent20 {
+  background: #F66295;
+  background: -moz-linear-gradient(left, #F66295 0%, #f66262 100%);
+  background: -webkit-linear-gradient(left, #F66295 0%, #f66262 100%);
+  background: linear-gradient(to right, #F66295 0%, #f66262 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
+
+.percent30 {
+  background: #FAAD72;
+  background: -moz-linear-gradient(left, #FAAD72 0%, #F66295 100%);
+  background: -webkit-linear-gradient(left, #FAAD72 0%, #F66295 100%);
+  background: linear-gradient(to right, #FAAD72 0%, #F66295 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
+
+.percent40 {
+  background: #fac872;
+  background: -moz-linear-gradient(left, #fac872 0%, #FAAD72 100%);
+  background: -webkit-linear-gradient(left, #fac872 0%, #FAAD72 100%);
+  background: linear-gradient(to right, #fac872 0%, #FAAD72 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
+
+.percent50 {
+  background: #fae472;
+  background: -moz-linear-gradient(left, #fae472 0%, #fac872 100%);
+  background: -webkit-linear-gradient(left, #fae472 0%, #fac872 100%);
+  background: linear-gradient(to right, #fae472 0%, #fac872 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
+
+.percent60 {
+  background: #dffa72;
+  background: -moz-linear-gradient(left, #dffa72 0%, #fae472 100%);
+  background: -webkit-linear-gradient(left, #dffa72 0%, #fae472 100%);
+  background: linear-gradient(to right, #dffa72 0%, #fae472 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
+
+.percent70 {
+  background: #aefa72;
+  background: -moz-linear-gradient(left, #aefa72 0%, #dffa72 100%);
+  background: -webkit-linear-gradient(left, #aefa72 0%, #dffa72 100%);
+  background: linear-gradient(to right, #aefa72 0%, #dffa72 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
+
+.percent80 {
+  background: #72fa8c;
+  background: -moz-linear-gradient(left, #72fa8c 0%, #aefa72 100%);
+  background: -webkit-linear-gradient(left, #72fa8c 0%, #aefa72 100%);
+  background: linear-gradient(to right, #72fa8c 0%, #aefa72 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
+
+.percent90 {
+  background: #72fae5;
+  background: -moz-linear-gradient(left, #72fae5 0%, #72fa8c 100%);
+  background: -webkit-linear-gradient(left, #72fae5 0%, #72fa8c 100%);
+  background: linear-gradient(to right, #72fae5 0%, #72fa8c 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }
+
+.percent100 {
+  background: #72a4fa;
+  background: -moz-linear-gradient(left, #72a4fa 0%, #72fae5 100%);
+  background: -webkit-linear-gradient(left, #72a4fa 0%, #72fae5 100%);
+  background: linear-gradient(to right, #72a4fa 0%, #72fae5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color1', endColorstr='$color2',GradientType=1 ); }

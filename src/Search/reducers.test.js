@@ -1,122 +1,35 @@
-import * as actions from './SignUpAction';
-import * as reducers from './SignUpReducer';
-import { shallow, mount } from 'enzyme';
-import configureStore from 'redux-mock-store';
-import SignUpContainer, { SignUp } from './SignUp';
-import createRouterContext from 'react-router-test-context';
-import PropTypes from 'prop-types';
-import React from 'react';
+import * as reducers from './reducers';
 
-describe('Login action', ()=>{
+describe('searchResults Reducers', () => {
+  it('searchResults should set default state', () => {
+    const expectation = [];
 
-  it('SignUpAction should take object return an action', () => {
-    const newUser = {
-      name: 'Mr. Mike',
-      email: 'Mr.Mike@Mr.Mike.com',
-      password: 'Password'
-    };
-    const expected = {
-      type: 'SIGN_UP_ACTION',
-      newUser: {
-        name: 'Mr. Mike',
-        email: 'Mr.Mike@Mr.Mike.com',
-        password: 'Password'
-      }
-    };
-
-    expect(actions.SignUpAction(newUser)).toEqual(expected);
-  });
-});
-
-describe('CardCatalog Reducers', () => {
-  it('newUser should set default state', () => {
-    const expectation = {};
-
-    expect(reducers.newUser(undefined, {})).toEqual(expectation);
+    expect(reducers.searchResults(undefined, {})).toEqual(expectation);
   });
 
-  it('SIGN_UP_ACTION should add a new user to state', () => {
+  it('searchResults should update', () => {
     const action = {
-      type: 'SIGN_UP_ACTION',
-      newUser: {
-        name: 'Mr. Mike',
-        email: 'Mr.Mike@Mr.Mike.com',
-        password: 'Password'
-      }
+      type: 'UPDATE_SEARCH_RESULTS',
+      searchResults: ['some flights']
     };
-    const expectation = action.newUser;
 
-    expect(reducers.newUser(undefined, action)).toEqual(expectation);
+    expect(reducers.searchResults(undefined, action)).toEqual(action.searchResults);
   });
 });
 
-describe('SignUp snapshot', () => {
+describe('resultsUpdated Reducers', () => {
+  it('resultsUpdated should set default state', () => {
+    const expectation = '';
 
-  it('should always match the snapshot', () => {
-    const mockStore = configureStore();
-    const initialState = {
-      user: {}
-    };
-    const store = mockStore(initialState);
-    const wrapper = shallow(<SignUpContainer
-      store = {store}
-    />);
-
-    expect(wrapper).toMatchSnapshot();
-
+    expect(reducers.resultsUpdated(undefined, {})).toEqual(expectation);
   });
-});
 
-describe('SignUp container', () => {
-
-  it('should have default state', () => {
-    const mockStore = configureStore();
-    const initialState = {
-      user: {}
-    };
-    const store = mockStore(initialState);
-    const context = createRouterContext();
-    const childContextTypes = {
-      router: PropTypes.object
-    };
-    const wrapper = mount(<SignUpContainer
-      store={store}
-      users={{users: {}}}
-    />, {context, childContextTypes});
-
-    expect(wrapper.instance().props.users).toEqual({users: {}});
-
-  });
-});
-
-describe('SignUp state', () => {
-  it('should have default state', () => {
-    const context = createRouterContext();
-    const initialState = {};
-    const expected = {
-      name: 'Yung-Jhun',
-      email: 'Yung@Jhun.tacos',
-      password: 'complete',
-      retypePassword: 'complete',
-      signUpError: false,
-      disabled: false,
-      passwordValidationError: false
+  it('resultsUpdated should update', () => {
+    const action = {
+      type: 'UPDATE_SEARCH_RESULTS',
+      searchResults: ['some flights']
     };
 
-    const wrapper = shallow(<SignUp
-      user={initialState}
-    />, context);
-
-    const name = wrapper.find('[type="text"]');
-    const email = wrapper.find('[type="email"]');
-    const password = wrapper.find('[type="password"]').first();
-    const rePassword = wrapper.find('[type="password"]').last();
-
-    name.simulate('change', {target: {value: 'Yung-Jhun'}});
-    email.simulate('change', {target: {value: 'Yung@Jhun.tacos'}});
-    password.simulate('change', {target: {value: 'complete'}});
-    rePassword.simulate('change', {target: {value: 'complete'}});
-
-    expect(wrapper.state()).toEqual(expected);
+    expect(typeof(reducers.resultsUpdated(undefined, action))).toEqual('number');
   });
 });

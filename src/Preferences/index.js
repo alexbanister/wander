@@ -91,11 +91,10 @@ export class Preferences extends Component {
     event.preventDefault();
     localStorage.setItem('travelPreferences', JSON.stringify(this.state));
     this.props.savePreferences(this.state);
-    this.props.location.pathname = '/bucketList'
-    this.props.match.path = '/bucketList'
-    this.props.match.url = '/bucketList'
+    this.props.location.pathname = '/bucketList';
+    this.props.match.path = '/bucketList';
+    this.props.match.url = '/bucketList';
     this.props.history.push('/bucketList');
-    console.log('props ', this.props);
   }
 
   render() {
@@ -210,6 +209,8 @@ export class Preferences extends Component {
 Preferences.propTypes ={
   savePreferences: PropTypes.func,
   history: PropTypes.object,
+  location: PropTypes.object,
+  match: PropTypes.object,
   preferences: PropTypes.object
 };
 

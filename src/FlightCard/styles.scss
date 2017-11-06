@@ -1,12 +1,10 @@
 @import "../variables.scss";
 
-.FlightCard {
+.flightCard {
   color: $body-dark;
-  background: $background;
   padding: .75em;
   margin: 1em;
   font-size: 1em;
-  @include horizontal-gradient(#F66295, #FAAD72);
   .price {
     font-size: 1.5em;
     font-weight: bold;
@@ -47,4 +45,34 @@
       margin: 0;
     }
   }
+}
+.percent10 {
+  @include horizontal-gradient($percent0, $percent10);
+}
+.percent20 {
+  @include horizontal-gradient($percent10, $percent20);
+}
+.percent30 {
+  @include horizontal-gradient($percent20, $percent30);
+}
+.percent40 {
+  @include horizontal-gradient($percent30, $percent40);
+}
+.percent50 {
+  @include horizontal-gradient($percent40, $percent50);
+}
+.percent60 {
+  @include horizontal-gradient($percent50, $percent60);
+}
+.percent70 {
+  @include horizontal-gradient($percent60, $percent70);
+}
+.percent80 {
+  @include horizontal-gradient($percent70, $percent80);
+}
+.percent90 {
+  @include horizontal-gradient($percent80, $percent90);
+}
+.percent100 {
+  @include horizontal-gradient($percent90, $percent100);
 }

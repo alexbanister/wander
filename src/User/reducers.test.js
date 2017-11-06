@@ -1,122 +1,71 @@
-import * as actions from './SignUpAction';
-import * as reducers from './SignUpReducer';
-import { shallow, mount } from 'enzyme';
-import configureStore from 'redux-mock-store';
-import SignUpContainer, { SignUp } from './SignUp';
-import createRouterContext from 'react-router-test-context';
-import PropTypes from 'prop-types';
-import React from 'react';
+import * as reducers from './reducers';
 
-describe('Login action', ()=>{
-
-  it('SignUpAction should take object return an action', () => {
-    const newUser = {
-      name: 'Mr. Mike',
-      email: 'Mr.Mike@Mr.Mike.com',
-      password: 'Password'
-    };
-    const expected = {
-      type: 'SIGN_UP_ACTION',
-      newUser: {
-        name: 'Mr. Mike',
-        email: 'Mr.Mike@Mr.Mike.com',
-        password: 'Password'
-      }
-    };
-
-    expect(actions.SignUpAction(newUser)).toEqual(expected);
-  });
-});
-
-describe('CardCatalog Reducers', () => {
-  it('newUser should set default state', () => {
+describe('user Reducers', () => {
+  it('user should set default state', () => {
     const expectation = {};
 
-    expect(reducers.newUser(undefined, {})).toEqual(expectation);
+    expect(reducers.user(undefined, {})).toEqual(expectation);
   });
 
-  it('SIGN_UP_ACTION should add a new user to state', () => {
+  it('user should login', () => {
     const action = {
-      type: 'SIGN_UP_ACTION',
-      newUser: {
-        name: 'Mr. Mike',
-        email: 'Mr.Mike@Mr.Mike.com',
-        password: 'Password'
+      type: 'LOGIN_ACTION',
+      user: {
+        email: 'email@email.com',
+        password: 'password'
       }
     };
-    const expectation = action.newUser;
 
-    expect(reducers.newUser(undefined, action)).toEqual(expectation);
+    expect(reducers.user(undefined, action)).toEqual(action.user);
+  });
+
+  it('user should sign up', () => {
+    const action = {
+      type: 'SIGN_UP_ACTION',
+      user: {
+        email: 'email@email.com',
+        password: 'password'
+      }
+    };
+
+    expect(reducers.user(undefined, action)).toEqual(action.user);
+  });
+
+  it('user should sign up', () => {
+    const action = {
+      type: 'SIGN_OUT_ACTION'
+    };
+
+    expect(reducers.user(undefined, action)).toEqual({});
   });
 });
 
-describe('SignUp snapshot', () => {
-
-  it('should always match the snapshot', () => {
-    const mockStore = configureStore();
-    const initialState = {
-      user: {}
-    };
-    const store = mockStore(initialState);
-    const wrapper = shallow(<SignUpContainer
-      store = {store}
-    />);
-
-    expect(wrapper).toMatchSnapshot();
-
+describe('isLoggedIn Reducers', () => {
+  it('isLoggedIn should set default state', () => {
+    expect(reducers.isLoggedIn(undefined, {})).toEqual(false);
   });
-});
 
-describe('SignUp container', () => {
-
-  it('should have default state', () => {
-    const mockStore = configureStore();
-    const initialState = {
-      user: {}
+  it('isLoggedIn should login', () => {
+    const action = {
+      type: 'LOGIN_ACTION'
     };
-    const store = mockStore(initialState);
-    const context = createRouterContext();
-    const childContextTypes = {
-      router: PropTypes.object
-    };
-    const wrapper = mount(<SignUpContainer
-      store={store}
-      users={{users: {}}}
-    />, {context, childContextTypes});
 
-    expect(wrapper.instance().props.users).toEqual({users: {}});
-
+    expect(reducers.isLoggedIn(undefined, action)).toEqual(true);
   });
-});
 
-describe('SignUp state', () => {
-  it('should have default state', () => {
-    const context = createRouterContext();
-    const initialState = {};
-    const expected = {
-      name: 'Yung-Jhun',
-      email: 'Yung@Jhun.tacos',
-      password: 'complete',
-      retypePassword: 'complete',
-      signUpError: false,
-      disabled: false,
-      passwordValidationError: false
+  it('isLoggedIn should sign up', () => {
+    const action = {
+      type: 'SIGN_UP_ACTION'
     };
 
-    const wrapper = shallow(<SignUp
-      user={initialState}
-    />, context);
+    expect(reducers.isLoggedIn(undefined, action)).toEqual(true);
+  });
 
-    const name = wrapper.find('[type="text"]');
-    const email = wrapper.find('[type="email"]');
-    const password = wrapper.find('[type="password"]').first();
-    const rePassword = wrapper.find('[type="password"]').last();
+  it('isLoggedIn should sign up', () => {
+    const action = {
+      type: 'SIGN_OUT_ACTION'
+    };
 
-    name.simulate('change', {target: {value: 'Yung-Jhun'}});
-    email.simulate('change', {target: {value: 'Yung@Jhun.tacos'}});
-    password.simulate('change', {target: {value: 'complete'}});
-    rePassword.simulate('change', {target: {value: 'complete'}});
-
-    expect(wrapper.state()).toEqual(expected);
+    expect(reducers.isLoggedIn(undefined, action)).toEqual(false);
   });
 });

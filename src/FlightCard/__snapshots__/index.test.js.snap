@@ -1,0 +1,1885 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FlightCard should always match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <FlightCard
+    itinerary={
+        Object {
+            "inbound": Object {
+              "flightDuration": "2hrs 5mins",
+              "flights": Array [
+                Object {
+                  "arrivalTime": "later",
+                  "departureTime": "now",
+                  "destination": "CDG",
+                  "destinationCity": "Paris",
+                  "flightNumber": "1234",
+                  "origin": "DEN",
+                  "originCity": "Denver",
+                },
+              ],
+            },
+            "outbound": Object {
+              "flightDuration": "2hrs 5mins",
+              "flights": Array [
+                Object {
+                  "arrivalTime": "later",
+                  "departureTime": "now",
+                  "destination": "CDG",
+                  "destinationCity": "Paris",
+                  "flightNumber": "1234",
+                  "origin": "DEN",
+                  "originCity": "Denver",
+                },
+              ],
+            },
+            "price": "$1000",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": "$1000undefined2hrs 5mins2hrs 5mins",
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="price"
+>
+          $1000
+</div>,
+        <div
+          className="flights"
+>
+          <div
+                    className="directionHeader"
+          >
+                    <h3>
+                              Depart
+                    </h3>
+                    2hrs 5mins
+          </div>
+          <div>
+                    <div
+                              className="oneway"
+                    >
+                              <div
+                                        className="top-row"
+                              >
+                                        <span
+                                                  className="airport"
+                                        >
+                                                  DEN
+                                                  <h6>
+                                                            Denver
+                                                  </h6>
+                                        </span>
+                                        <span
+                                                  className="flightNumber"
+                                        >
+                                                  1234
+                                        </span>
+                                        <span
+                                                  className="airport"
+                                        >
+                                                  <h6>
+                                                            Paris
+                                                  </h6>
+                                                  CDG
+                                        </span>
+                              </div>
+                              <div
+                                        className="second-row"
+                              >
+                                        <span
+                                                  className="time"
+                                        >
+                                                  now
+                                        </span>
+                                        <span
+                                                  className="flightTime"
+                                        />
+                                        <span
+                                                  className="time"
+                                        >
+                                                  later
+                                        </span>
+                              </div>
+                              
+                    </div>
+          </div>
+          <div
+                    className="directionHeader"
+          >
+                    <h3>
+                              Return
+                    </h3>
+                    2hrs 5mins
+          </div>
+          <div>
+                    <div
+                              className="oneway"
+                    >
+                              <div
+                                        className="top-row"
+                              >
+                                        <span
+                                                  className="airport"
+                                        >
+                                                  DEN
+                                                  <h6>
+                                                            Denver
+                                                  </h6>
+                                        </span>
+                                        <span
+                                                  className="flightNumber"
+                                        >
+                                                  1234
+                                        </span>
+                                        <span
+                                                  className="airport"
+                                        >
+                                                  <h6>
+                                                            Paris
+                                                  </h6>
+                                                  CDG
+                                        </span>
+                              </div>
+                              <div
+                                        className="second-row"
+                              >
+                                        <span
+                                                  className="time"
+                                        >
+                                                  now
+                                        </span>
+                                        <span
+                                                  className="flightTime"
+                                        />
+                                        <span
+                                                  className="time"
+                                        >
+                                                  later
+                                        </span>
+                              </div>
+                              
+                    </div>
+          </div>
+</div>,
+      ],
+      "className": "flightCard percentNaN",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": "$1000",
+          "className": "price",
+        },
+        "ref": null,
+        "rendered": "$1000",
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": null,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div
+              className="directionHeader"
+>
+              <h3>
+                            Depart
+              </h3>
+              2hrs 5mins
+</div>,
+            <div>
+              <div
+                            className="oneway"
+              >
+                            <div
+                                          className="top-row"
+                            >
+                                          <span
+                                                        className="airport"
+                                          >
+                                                        DEN
+                                                        <h6>
+                                                                      Denver
+                                                        </h6>
+                                          </span>
+                                          <span
+                                                        className="flightNumber"
+                                          >
+                                                        1234
+                                          </span>
+                                          <span
+                                                        className="airport"
+                                          >
+                                                        <h6>
+                                                                      Paris
+                                                        </h6>
+                                                        CDG
+                                          </span>
+                            </div>
+                            <div
+                                          className="second-row"
+                            >
+                                          <span
+                                                        className="time"
+                                          >
+                                                        now
+                                          </span>
+                                          <span
+                                                        className="flightTime"
+                                          />
+                                          <span
+                                                        className="time"
+                                          >
+                                                        later
+                                          </span>
+                            </div>
+                            
+              </div>
+</div>,
+            <div
+              className="directionHeader"
+>
+              <h3>
+                            Return
+              </h3>
+              2hrs 5mins
+</div>,
+            <div>
+              <div
+                            className="oneway"
+              >
+                            <div
+                                          className="top-row"
+                            >
+                                          <span
+                                                        className="airport"
+                                          >
+                                                        DEN
+                                                        <h6>
+                                                                      Denver
+                                                        </h6>
+                                          </span>
+                                          <span
+                                                        className="flightNumber"
+                                          >
+                                                        1234
+                                          </span>
+                                          <span
+                                                        className="airport"
+                                          >
+                                                        <h6>
+                                                                      Paris
+                                                        </h6>
+                                                        CDG
+                                          </span>
+                            </div>
+                            <div
+                                          className="second-row"
+                            >
+                                          <span
+                                                        className="time"
+                                          >
+                                                        now
+                                          </span>
+                                          <span
+                                                        className="flightTime"
+                                          />
+                                          <span
+                                                        className="time"
+                                          >
+                                                        later
+                                          </span>
+                            </div>
+                            
+              </div>
+</div>,
+          ],
+          "className": "flights",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  Depart
+</h3>,
+                "2hrs 5mins",
+              ],
+              "className": "directionHeader",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Depart",
+                },
+                "ref": null,
+                "rendered": "Depart",
+                "type": "h3",
+              },
+              "2hrs 5mins",
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="oneway"
+>
+                  <div
+                                    className="top-row"
+                  >
+                                    <span
+                                                      className="airport"
+                                    >
+                                                      DEN
+                                                      <h6>
+                                                                        Denver
+                                                      </h6>
+                                    </span>
+                                    <span
+                                                      className="flightNumber"
+                                    >
+                                                      1234
+                                    </span>
+                                    <span
+                                                      className="airport"
+                                    >
+                                                      <h6>
+                                                                        Paris
+                                                      </h6>
+                                                      CDG
+                                    </span>
+                  </div>
+                  <div
+                                    className="second-row"
+                  >
+                                    <span
+                                                      className="time"
+                                    >
+                                                      now
+                                    </span>
+                                    <span
+                                                      className="flightTime"
+                                    />
+                                    <span
+                                                      className="time"
+                                    >
+                                                      later
+                                    </span>
+                  </div>
+                  
+</div>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "oneway0",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="top-row"
+>
+                      <span
+                                            className="airport"
+                      >
+                                            DEN
+                                            <h6>
+                                                                  Denver
+                                            </h6>
+                      </span>
+                      <span
+                                            className="flightNumber"
+                      >
+                                            1234
+                      </span>
+                      <span
+                                            className="airport"
+                      >
+                                            <h6>
+                                                                  Paris
+                                            </h6>
+                                            CDG
+                      </span>
+</div>,
+                    <div
+                      className="second-row"
+>
+                      <span
+                                            className="time"
+                      >
+                                            now
+                      </span>
+                      <span
+                                            className="flightTime"
+                      />
+                      <span
+                                            className="time"
+                      >
+                                            later
+                      </span>
+</div>,
+                    "",
+                  ],
+                  "className": "oneway",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <span
+                          className="airport"
+>
+                          DEN
+                          <h6>
+                                                    Denver
+                          </h6>
+</span>,
+                        <span
+                          className="flightNumber"
+>
+                          1234
+</span>,
+                        <span
+                          className="airport"
+>
+                          <h6>
+                                                    Paris
+                          </h6>
+                          CDG
+</span>,
+                      ],
+                      "className": "top-row",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            "DEN",
+                            <h6>
+                              Denver
+</h6>,
+                          ],
+                          "className": "airport",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "DEN",
+                          Object {
+                            "instance": null,
+                            "key": null,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Denver",
+                            },
+                            "ref": null,
+                            "rendered": "Denver",
+                            "type": "h6",
+                          },
+                        ],
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "1234",
+                          "className": "flightNumber",
+                        },
+                        "ref": null,
+                        "rendered": "1234",
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <h6>
+                              Paris
+</h6>,
+                            "CDG",
+                          ],
+                          "className": "airport",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": null,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Paris",
+                            },
+                            "ref": null,
+                            "rendered": "Paris",
+                            "type": "h6",
+                          },
+                          "CDG",
+                        ],
+                        "type": "span",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <span
+                          className="time"
+>
+                          now
+</span>,
+                        <span
+                          className="flightTime"
+/>,
+                        <span
+                          className="time"
+>
+                          later
+</span>,
+                      ],
+                      "className": "second-row",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "now",
+                          "className": "time",
+                        },
+                        "ref": null,
+                        "rendered": "now",
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": undefined,
+                          "className": "flightTime",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "later",
+                          "className": "time",
+                        },
+                        "ref": null,
+                        "rendered": "later",
+                        "type": "span",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  "",
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <h3>
+                  Return
+</h3>,
+                "2hrs 5mins",
+              ],
+              "className": "directionHeader",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": null,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Return",
+                },
+                "ref": null,
+                "rendered": "Return",
+                "type": "h3",
+              },
+              "2hrs 5mins",
+            ],
+            "type": "div",
+          },
+          Object {
+            "instance": null,
+            "key": null,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <div
+                  className="oneway"
+>
+                  <div
+                                    className="top-row"
+                  >
+                                    <span
+                                                      className="airport"
+                                    >
+                                                      DEN
+                                                      <h6>
+                                                                        Denver
+                                                      </h6>
+                                    </span>
+                                    <span
+                                                      className="flightNumber"
+                                    >
+                                                      1234
+                                    </span>
+                                    <span
+                                                      className="airport"
+                                    >
+                                                      <h6>
+                                                                        Paris
+                                                      </h6>
+                                                      CDG
+                                    </span>
+                  </div>
+                  <div
+                                    className="second-row"
+                  >
+                                    <span
+                                                      className="time"
+                                    >
+                                                      now
+                                    </span>
+                                    <span
+                                                      className="flightTime"
+                                    />
+                                    <span
+                                                      className="time"
+                                    >
+                                                      later
+                                    </span>
+                  </div>
+                  
+</div>,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": "oneway0",
+                "nodeType": "host",
+                "props": Object {
+                  "children": Array [
+                    <div
+                      className="top-row"
+>
+                      <span
+                                            className="airport"
+                      >
+                                            DEN
+                                            <h6>
+                                                                  Denver
+                                            </h6>
+                      </span>
+                      <span
+                                            className="flightNumber"
+                      >
+                                            1234
+                      </span>
+                      <span
+                                            className="airport"
+                      >
+                                            <h6>
+                                                                  Paris
+                                            </h6>
+                                            CDG
+                      </span>
+</div>,
+                    <div
+                      className="second-row"
+>
+                      <span
+                                            className="time"
+                      >
+                                            now
+                      </span>
+                      <span
+                                            className="flightTime"
+                      />
+                      <span
+                                            className="time"
+                      >
+                                            later
+                      </span>
+</div>,
+                    "",
+                  ],
+                  "className": "oneway",
+                },
+                "ref": null,
+                "rendered": Array [
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <span
+                          className="airport"
+>
+                          DEN
+                          <h6>
+                                                    Denver
+                          </h6>
+</span>,
+                        <span
+                          className="flightNumber"
+>
+                          1234
+</span>,
+                        <span
+                          className="airport"
+>
+                          <h6>
+                                                    Paris
+                          </h6>
+                          CDG
+</span>,
+                      ],
+                      "className": "top-row",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            "DEN",
+                            <h6>
+                              Denver
+</h6>,
+                          ],
+                          "className": "airport",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          "DEN",
+                          Object {
+                            "instance": null,
+                            "key": null,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Denver",
+                            },
+                            "ref": null,
+                            "rendered": "Denver",
+                            "type": "h6",
+                          },
+                        ],
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "1234",
+                          "className": "flightNumber",
+                        },
+                        "ref": null,
+                        "rendered": "1234",
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": Array [
+                            <h6>
+                              Paris
+</h6>,
+                            "CDG",
+                          ],
+                          "className": "airport",
+                        },
+                        "ref": null,
+                        "rendered": Array [
+                          Object {
+                            "instance": null,
+                            "key": null,
+                            "nodeType": "host",
+                            "props": Object {
+                              "children": "Paris",
+                            },
+                            "ref": null,
+                            "rendered": "Paris",
+                            "type": "h6",
+                          },
+                          "CDG",
+                        ],
+                        "type": "span",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  Object {
+                    "instance": null,
+                    "key": null,
+                    "nodeType": "host",
+                    "props": Object {
+                      "children": Array [
+                        <span
+                          className="time"
+>
+                          now
+</span>,
+                        <span
+                          className="flightTime"
+/>,
+                        <span
+                          className="time"
+>
+                          later
+</span>,
+                      ],
+                      "className": "second-row",
+                    },
+                    "ref": null,
+                    "rendered": Array [
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "now",
+                          "className": "time",
+                        },
+                        "ref": null,
+                        "rendered": "now",
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": undefined,
+                          "className": "flightTime",
+                        },
+                        "ref": null,
+                        "rendered": null,
+                        "type": "span",
+                      },
+                      Object {
+                        "instance": null,
+                        "key": null,
+                        "nodeType": "host",
+                        "props": Object {
+                          "children": "later",
+                          "className": "time",
+                        },
+                        "ref": null,
+                        "rendered": "later",
+                        "type": "span",
+                      },
+                    ],
+                    "type": "div",
+                  },
+                  "",
+                ],
+                "type": "div",
+              },
+            ],
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": "$1000undefined2hrs 5mins2hrs 5mins",
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="price"
+>
+            $1000
+</div>,
+          <div
+            className="flights"
+>
+            <div
+                        className="directionHeader"
+            >
+                        <h3>
+                                    Depart
+                        </h3>
+                        2hrs 5mins
+            </div>
+            <div>
+                        <div
+                                    className="oneway"
+                        >
+                                    <div
+                                                className="top-row"
+                                    >
+                                                <span
+                                                            className="airport"
+                                                >
+                                                            DEN
+                                                            <h6>
+                                                                        Denver
+                                                            </h6>
+                                                </span>
+                                                <span
+                                                            className="flightNumber"
+                                                >
+                                                            1234
+                                                </span>
+                                                <span
+                                                            className="airport"
+                                                >
+                                                            <h6>
+                                                                        Paris
+                                                            </h6>
+                                                            CDG
+                                                </span>
+                                    </div>
+                                    <div
+                                                className="second-row"
+                                    >
+                                                <span
+                                                            className="time"
+                                                >
+                                                            now
+                                                </span>
+                                                <span
+                                                            className="flightTime"
+                                                />
+                                                <span
+                                                            className="time"
+                                                >
+                                                            later
+                                                </span>
+                                    </div>
+                                    
+                        </div>
+            </div>
+            <div
+                        className="directionHeader"
+            >
+                        <h3>
+                                    Return
+                        </h3>
+                        2hrs 5mins
+            </div>
+            <div>
+                        <div
+                                    className="oneway"
+                        >
+                                    <div
+                                                className="top-row"
+                                    >
+                                                <span
+                                                            className="airport"
+                                                >
+                                                            DEN
+                                                            <h6>
+                                                                        Denver
+                                                            </h6>
+                                                </span>
+                                                <span
+                                                            className="flightNumber"
+                                                >
+                                                            1234
+                                                </span>
+                                                <span
+                                                            className="airport"
+                                                >
+                                                            <h6>
+                                                                        Paris
+                                                            </h6>
+                                                            CDG
+                                                </span>
+                                    </div>
+                                    <div
+                                                className="second-row"
+                                    >
+                                                <span
+                                                            className="time"
+                                                >
+                                                            now
+                                                </span>
+                                                <span
+                                                            className="flightTime"
+                                                />
+                                                <span
+                                                            className="time"
+                                                >
+                                                            later
+                                                </span>
+                                    </div>
+                                    
+                        </div>
+            </div>
+</div>,
+        ],
+        "className": "flightCard percentNaN",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": "$1000",
+            "className": "price",
+          },
+          "ref": null,
+          "rendered": "$1000",
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": null,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div
+                className="directionHeader"
+>
+                <h3>
+                                Depart
+                </h3>
+                2hrs 5mins
+</div>,
+              <div>
+                <div
+                                className="oneway"
+                >
+                                <div
+                                                className="top-row"
+                                >
+                                                <span
+                                                                className="airport"
+                                                >
+                                                                DEN
+                                                                <h6>
+                                                                                Denver
+                                                                </h6>
+                                                </span>
+                                                <span
+                                                                className="flightNumber"
+                                                >
+                                                                1234
+                                                </span>
+                                                <span
+                                                                className="airport"
+                                                >
+                                                                <h6>
+                                                                                Paris
+                                                                </h6>
+                                                                CDG
+                                                </span>
+                                </div>
+                                <div
+                                                className="second-row"
+                                >
+                                                <span
+                                                                className="time"
+                                                >
+                                                                now
+                                                </span>
+                                                <span
+                                                                className="flightTime"
+                                                />
+                                                <span
+                                                                className="time"
+                                                >
+                                                                later
+                                                </span>
+                                </div>
+                                
+                </div>
+</div>,
+              <div
+                className="directionHeader"
+>
+                <h3>
+                                Return
+                </h3>
+                2hrs 5mins
+</div>,
+              <div>
+                <div
+                                className="oneway"
+                >
+                                <div
+                                                className="top-row"
+                                >
+                                                <span
+                                                                className="airport"
+                                                >
+                                                                DEN
+                                                                <h6>
+                                                                                Denver
+                                                                </h6>
+                                                </span>
+                                                <span
+                                                                className="flightNumber"
+                                                >
+                                                                1234
+                                                </span>
+                                                <span
+                                                                className="airport"
+                                                >
+                                                                <h6>
+                                                                                Paris
+                                                                </h6>
+                                                                CDG
+                                                </span>
+                                </div>
+                                <div
+                                                className="second-row"
+                                >
+                                                <span
+                                                                className="time"
+                                                >
+                                                                now
+                                                </span>
+                                                <span
+                                                                className="flightTime"
+                                                />
+                                                <span
+                                                                className="time"
+                                                >
+                                                                later
+                                                </span>
+                                </div>
+                                
+                </div>
+</div>,
+            ],
+            "className": "flights",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h3>
+                    Depart
+</h3>,
+                  "2hrs 5mins",
+                ],
+                "className": "directionHeader",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Depart",
+                  },
+                  "ref": null,
+                  "rendered": "Depart",
+                  "type": "h3",
+                },
+                "2hrs 5mins",
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="oneway"
+>
+                    <div
+                                        className="top-row"
+                    >
+                                        <span
+                                                            className="airport"
+                                        >
+                                                            DEN
+                                                            <h6>
+                                                                                Denver
+                                                            </h6>
+                                        </span>
+                                        <span
+                                                            className="flightNumber"
+                                        >
+                                                            1234
+                                        </span>
+                                        <span
+                                                            className="airport"
+                                        >
+                                                            <h6>
+                                                                                Paris
+                                                            </h6>
+                                                            CDG
+                                        </span>
+                    </div>
+                    <div
+                                        className="second-row"
+                    >
+                                        <span
+                                                            className="time"
+                                        >
+                                                            now
+                                        </span>
+                                        <span
+                                                            className="flightTime"
+                                        />
+                                        <span
+                                                            className="time"
+                                        >
+                                                            later
+                                        </span>
+                    </div>
+                    
+</div>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "oneway0",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="top-row"
+>
+                        <span
+                                                className="airport"
+                        >
+                                                DEN
+                                                <h6>
+                                                                        Denver
+                                                </h6>
+                        </span>
+                        <span
+                                                className="flightNumber"
+                        >
+                                                1234
+                        </span>
+                        <span
+                                                className="airport"
+                        >
+                                                <h6>
+                                                                        Paris
+                                                </h6>
+                                                CDG
+                        </span>
+</div>,
+                      <div
+                        className="second-row"
+>
+                        <span
+                                                className="time"
+                        >
+                                                now
+                        </span>
+                        <span
+                                                className="flightTime"
+                        />
+                        <span
+                                                className="time"
+                        >
+                                                later
+                        </span>
+</div>,
+                      "",
+                    ],
+                    "className": "oneway",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="airport"
+>
+                            DEN
+                            <h6>
+                                                        Denver
+                            </h6>
+</span>,
+                          <span
+                            className="flightNumber"
+>
+                            1234
+</span>,
+                          <span
+                            className="airport"
+>
+                            <h6>
+                                                        Paris
+                            </h6>
+                            CDG
+</span>,
+                        ],
+                        "className": "top-row",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              "DEN",
+                              <h6>
+                                Denver
+</h6>,
+                            ],
+                            "className": "airport",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "DEN",
+                            Object {
+                              "instance": null,
+                              "key": null,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "Denver",
+                              },
+                              "ref": null,
+                              "rendered": "Denver",
+                              "type": "h6",
+                            },
+                          ],
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "1234",
+                            "className": "flightNumber",
+                          },
+                          "ref": null,
+                          "rendered": "1234",
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              <h6>
+                                Paris
+</h6>,
+                              "CDG",
+                            ],
+                            "className": "airport",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": null,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "Paris",
+                              },
+                              "ref": null,
+                              "rendered": "Paris",
+                              "type": "h6",
+                            },
+                            "CDG",
+                          ],
+                          "type": "span",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="time"
+>
+                            now
+</span>,
+                          <span
+                            className="flightTime"
+/>,
+                          <span
+                            className="time"
+>
+                            later
+</span>,
+                        ],
+                        "className": "second-row",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "now",
+                            "className": "time",
+                          },
+                          "ref": null,
+                          "rendered": "now",
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": undefined,
+                            "className": "flightTime",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "later",
+                            "className": "time",
+                          },
+                          "ref": null,
+                          "rendered": "later",
+                          "type": "span",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    "",
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <h3>
+                    Return
+</h3>,
+                  "2hrs 5mins",
+                ],
+                "className": "directionHeader",
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": null,
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": "Return",
+                  },
+                  "ref": null,
+                  "rendered": "Return",
+                  "type": "h3",
+                },
+                "2hrs 5mins",
+              ],
+              "type": "div",
+            },
+            Object {
+              "instance": null,
+              "key": null,
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  <div
+                    className="oneway"
+>
+                    <div
+                                        className="top-row"
+                    >
+                                        <span
+                                                            className="airport"
+                                        >
+                                                            DEN
+                                                            <h6>
+                                                                                Denver
+                                                            </h6>
+                                        </span>
+                                        <span
+                                                            className="flightNumber"
+                                        >
+                                                            1234
+                                        </span>
+                                        <span
+                                                            className="airport"
+                                        >
+                                                            <h6>
+                                                                                Paris
+                                                            </h6>
+                                                            CDG
+                                        </span>
+                    </div>
+                    <div
+                                        className="second-row"
+                    >
+                                        <span
+                                                            className="time"
+                                        >
+                                                            now
+                                        </span>
+                                        <span
+                                                            className="flightTime"
+                                        />
+                                        <span
+                                                            className="time"
+                                        >
+                                                            later
+                                        </span>
+                    </div>
+                    
+</div>,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                Object {
+                  "instance": null,
+                  "key": "oneway0",
+                  "nodeType": "host",
+                  "props": Object {
+                    "children": Array [
+                      <div
+                        className="top-row"
+>
+                        <span
+                                                className="airport"
+                        >
+                                                DEN
+                                                <h6>
+                                                                        Denver
+                                                </h6>
+                        </span>
+                        <span
+                                                className="flightNumber"
+                        >
+                                                1234
+                        </span>
+                        <span
+                                                className="airport"
+                        >
+                                                <h6>
+                                                                        Paris
+                                                </h6>
+                                                CDG
+                        </span>
+</div>,
+                      <div
+                        className="second-row"
+>
+                        <span
+                                                className="time"
+                        >
+                                                now
+                        </span>
+                        <span
+                                                className="flightTime"
+                        />
+                        <span
+                                                className="time"
+                        >
+                                                later
+                        </span>
+</div>,
+                      "",
+                    ],
+                    "className": "oneway",
+                  },
+                  "ref": null,
+                  "rendered": Array [
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="airport"
+>
+                            DEN
+                            <h6>
+                                                        Denver
+                            </h6>
+</span>,
+                          <span
+                            className="flightNumber"
+>
+                            1234
+</span>,
+                          <span
+                            className="airport"
+>
+                            <h6>
+                                                        Paris
+                            </h6>
+                            CDG
+</span>,
+                        ],
+                        "className": "top-row",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              "DEN",
+                              <h6>
+                                Denver
+</h6>,
+                            ],
+                            "className": "airport",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            "DEN",
+                            Object {
+                              "instance": null,
+                              "key": null,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "Denver",
+                              },
+                              "ref": null,
+                              "rendered": "Denver",
+                              "type": "h6",
+                            },
+                          ],
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "1234",
+                            "className": "flightNumber",
+                          },
+                          "ref": null,
+                          "rendered": "1234",
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": Array [
+                              <h6>
+                                Paris
+</h6>,
+                              "CDG",
+                            ],
+                            "className": "airport",
+                          },
+                          "ref": null,
+                          "rendered": Array [
+                            Object {
+                              "instance": null,
+                              "key": null,
+                              "nodeType": "host",
+                              "props": Object {
+                                "children": "Paris",
+                              },
+                              "ref": null,
+                              "rendered": "Paris",
+                              "type": "h6",
+                            },
+                            "CDG",
+                          ],
+                          "type": "span",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    Object {
+                      "instance": null,
+                      "key": null,
+                      "nodeType": "host",
+                      "props": Object {
+                        "children": Array [
+                          <span
+                            className="time"
+>
+                            now
+</span>,
+                          <span
+                            className="flightTime"
+/>,
+                          <span
+                            className="time"
+>
+                            later
+</span>,
+                        ],
+                        "className": "second-row",
+                      },
+                      "ref": null,
+                      "rendered": Array [
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "now",
+                            "className": "time",
+                          },
+                          "ref": null,
+                          "rendered": "now",
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": undefined,
+                            "className": "flightTime",
+                          },
+                          "ref": null,
+                          "rendered": null,
+                          "type": "span",
+                        },
+                        Object {
+                          "instance": null,
+                          "key": null,
+                          "nodeType": "host",
+                          "props": Object {
+                            "children": "later",
+                            "className": "time",
+                          },
+                          "ref": null,
+                          "rendered": "later",
+                          "type": "span",
+                        },
+                      ],
+                      "type": "div",
+                    },
+                    "",
+                  ],
+                  "type": "div",
+                },
+              ],
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

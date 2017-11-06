@@ -7,7 +7,7 @@ import './styles.css';
 const Header = (props) => {
   return (
     <header>
-      <h1>Wonder <strong>&</strong> WANDER</h1>
+      <h1>Wander</h1>
       { props.isLoggedIn ? (
         <nav>
           <NavLink to='/preferences'>Preferences</NavLink>
