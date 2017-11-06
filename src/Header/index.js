@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import './styles.css';
@@ -33,4 +33,4 @@ const mapStateToProps =  (store) => ({
   isLoggedIn: store.isLoggedIn
 });
 
-export default connect(mapStateToProps, null)(Header);
+export default withRouter(connect(mapStateToProps, null)(Header));
