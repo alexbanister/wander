@@ -1,122 +1,72 @@
-import * as actions from './SignUpAction';
-import * as reducers from './SignUpReducer';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
-import SignUpContainer, { SignUp } from './SignUp';
-import createRouterContext from 'react-router-test-context';
-import PropTypes from 'prop-types';
+import PreferencesContainer, { Preferences } from './index';
 import React from 'react';
 
-describe('Login action', ()=>{
 
-  it('SignUpAction should take object return an action', () => {
-    const newUser = {
-      name: 'Mr. Mike',
-      email: 'Mr.Mike@Mr.Mike.com',
-      password: 'Password'
-    };
-    const expected = {
-      type: 'SIGN_UP_ACTION',
-      newUser: {
-        name: 'Mr. Mike',
-        email: 'Mr.Mike@Mr.Mike.com',
-        password: 'Password'
-      }
-    };
-
-    expect(actions.SignUpAction(newUser)).toEqual(expected);
-  });
-});
-
-describe('CardCatalog Reducers', () => {
-  it('newUser should set default state', () => {
-    const expectation = {};
-
-    expect(reducers.newUser(undefined, {})).toEqual(expectation);
-  });
-
-  it('SIGN_UP_ACTION should add a new user to state', () => {
-    const action = {
-      type: 'SIGN_UP_ACTION',
-      newUser: {
-        name: 'Mr. Mike',
-        email: 'Mr.Mike@Mr.Mike.com',
-        password: 'Password'
-      }
-    };
-    const expectation = action.newUser;
-
-    expect(reducers.newUser(undefined, action)).toEqual(expectation);
-  });
-});
-
-describe('SignUp snapshot', () => {
-
-  it('should always match the snapshot', () => {
+describe('Preferences', () => {
+  it('Container should always match the snapshot', () => {
     const mockStore = configureStore();
-    const initialState = {
-      user: {}
-    };
+    const initialState = {};
     const store = mockStore(initialState);
-    const wrapper = shallow(<SignUpContainer
+    const wrapper = shallow(<PreferencesContainer
       store = {store}
     />);
 
     expect(wrapper).toMatchSnapshot();
-
   });
-});
 
-describe('SignUp container', () => {
+  it('Preferences should match snapshot for sign up', () => {
+    const wrapper = shallow(<Preferences />);
 
-  it('should have default state', () => {
-    const mockStore = configureStore();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('Preferences should match snapshot for sign up', () => {
     const initialState = {
-      user: {}
+      departureAirport: '',
+      budget: 0,
+      departFlex: '0',
+      returnFlex: '0',
+      layoverMin: '1',
+      layoverMax: '3',
+      connections: '2',
+      ratio: '1',
+      airports: []
     };
-    const store = mockStore(initialState);
-    const context = createRouterContext();
-    const childContextTypes = {
-      router: PropTypes.object
+    const expectation = {
+      departureAirport: 'DE',
+      budget: 100,
+      departFlex: '2',
+      returnFlex: '2',
+      layoverMin: '4',
+      layoverMax: '8',
+      connections: '4',
+      ratio: '3',
+      airports: []
     };
-    const wrapper = mount(<SignUpContainer
-      store={store}
-      users={{users: {}}}
-    />, {context, childContextTypes});
+    const wrapper = shallow(<Preferences />);
 
-    expect(wrapper.instance().props.users).toEqual({users: {}});
+    expect(wrapper.state()).toEqual(initialState);
 
-  });
-});
+    const departureAirport = wrapper.find('[htmlFor="departureAirport"]').find('input');
+    const budget = wrapper.find('[htmlFor="budget"]').find('input');
+    const departFlex = wrapper.find('[htmlFor="departFlex"]').find('select');
+    const returnFlex = wrapper.find('[htmlFor="returnFlex"]').find('select');
+    const layoverMin = wrapper.find('[htmlFor="layoverMin"]').find('select');
+    const layoverMax = wrapper.find('[htmlFor="layoverMax"]').find('select');
+    const connections = wrapper.find('[htmlFor="connections"]').find('select');
+    const ratio = wrapper.find('[htmlFor="ratio"]').find('select');
 
-describe('SignUp state', () => {
-  it('should have default state', () => {
-    const context = createRouterContext();
-    const initialState = {};
-    const expected = {
-      name: 'Yung-Jhun',
-      email: 'Yung@Jhun.tacos',
-      password: 'complete',
-      retypePassword: 'complete',
-      signUpError: false,
-      disabled: false,
-      passwordValidationError: false
-    };
+    departureAirport.simulate('change', { target: { value: 'DE' }});
+    budget.simulate('change', { target: { value: 100 }});
+    departFlex.simulate('change', { target: { value: '2' }});
+    returnFlex.simulate('change', { target: { value: '2' }});
+    layoverMin.simulate('change', { target: { value: '4' }});
+    layoverMax.simulate('change', { target: { value: '8' }});
+    connections.simulate('change', { target: { value: '4' }});
+    ratio.simulate('change', { target: { value: '3' }});
 
-    const wrapper = shallow(<SignUp
-      user={initialState}
-    />, context);
-
-    const name = wrapper.find('[type="text"]');
-    const email = wrapper.find('[type="email"]');
-    const password = wrapper.find('[type="password"]').first();
-    const rePassword = wrapper.find('[type="password"]').last();
-
-    name.simulate('change', {target: {value: 'Yung-Jhun'}});
-    email.simulate('change', {target: {value: 'Yung@Jhun.tacos'}});
-    password.simulate('change', {target: {value: 'complete'}});
-    rePassword.simulate('change', {target: {value: 'complete'}});
-
-    expect(wrapper.state()).toEqual(expected);
+    expect(wrapper.state()).toEqual(expectation);
   });
 });
