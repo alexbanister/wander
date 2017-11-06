@@ -1,28 +1,28 @@
-.App {
-  text-align: center;
-}
+@import "../variables.scss";
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 3em;
+  h3 {
+    font-size: 3em;
+    color: $highlight;
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    font-size: 1.5em;
+  }
+  .auth {
+    display: flex;
+    justify-content: center;
+  }
+  .form-block {
+    background: $body-light;
+    border: 3px solid $highlight-dark;
+    padding: 1em;
+    margin: 2em;
+  }
 }
