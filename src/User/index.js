@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { LoginAction, SignUpAction, SignOutAction } from './actions';
+import { loginAction, signUpAction, signOutAction } from './actions';
 import LogIn from '../LogIn/';
 import SignUp from '../SignUp/';
 import PropTypes from 'prop-types';
@@ -8,12 +8,12 @@ import PropTypes from 'prop-types';
 export class User extends Component {
   componentDidMount() {
     if (this.props.signOut) {
-      this.props.SignOutAction();
+      this.props.signOutAction();
     }
   }
   getFormToLoad(formFlag) {
     return formFlag === 'signup' ?
-      <SignUp handleSubmit={(user) => this.props.SignUpAction(user)} /> :
+      <SignUp handleSubmit={(user) => this.props.signUpAction(user)} /> :
       <LogIn  handleSubmit={(user) => this.props.loginAction(user)} />;
   }
 
@@ -26,8 +26,8 @@ export class User extends Component {
 
 User.propTypes ={
   loginAction: PropTypes.func,
-  SignUpAction: PropTypes.func,
-  SignOutAction: PropTypes.func,
+  signUpAction: PropTypes.func,
+  signOutAction: PropTypes.func,
   user: PropTypes.object,
   signOut: PropTypes.bool,
   form: PropTypes.string
@@ -38,9 +38,9 @@ const mapStateToProps =  (store) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  loginAction: ( user ) => { dispatch(LoginAction(user)); },
-  SignOutAction: () => { dispatch(SignOutAction()); },
-  SignUpAction: ( user ) => { dispatch(SignUpAction(user)); }
+  loginAction: ( user ) => { dispatch(loginAction(user)); },
+  signOutAction: () => { dispatch(signOutAction()); },
+  signUpAction: ( user ) => { dispatch(signUpAction(user)); }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(User);
