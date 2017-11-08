@@ -14,7 +14,7 @@ describe('User action', ()=>{
       }
     };
 
-    expect(actions.LoginAction(user)).toEqual(expected);
+    expect(actions.loginAction(user)).toEqual(expected);
   });
 
   it('SIGN_UP_ACTION should take object return an action', () => {
@@ -30,7 +30,7 @@ describe('User action', ()=>{
       }
     };
 
-    expect(actions.SignUpAction(user)).toEqual(expected);
+    expect(actions.signUpAction(user)).toEqual(expected);
   });
 
   it('SIGN_UP_ACTION should take object return an action', () => {
@@ -38,6 +38,6 @@ describe('User action', ()=>{
       type: 'SIGN_OUT_ACTION'
     };
 
-    expect(actions.SignOutAction()).toEqual(expected);
+    expect(actions.signOutAction()).toEqual(expected);
   });
 });

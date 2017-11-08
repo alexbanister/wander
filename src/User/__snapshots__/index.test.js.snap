@@ -28,9 +28,9 @@ ShallowWrapper {
     "key": null,
     "nodeType": "class",
     "props": Object {
-      "SignOutAction": [Function],
-      "SignUpAction": [Function],
       "loginAction": [Function],
+      "signOutAction": [Function],
+      "signUpAction": [Function],
       "store": Object {
         "clearActions": [Function],
         "dispatch": [Function],
@@ -70,9 +70,9 @@ ShallowWrapper {
       "key": null,
       "nodeType": "class",
       "props": Object {
-        "SignOutAction": [Function],
-        "SignUpAction": [Function],
         "loginAction": [Function],
+        "signOutAction": [Function],
+        "signUpAction": [Function],
         "store": Object {
           "clearActions": [Function],
           "dispatch": [Function],
