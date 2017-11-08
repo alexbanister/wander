@@ -17,37 +17,30 @@ class App extends Component {
           <Route
             exact path='/'
             component={Welcome}
-            useKey={false}
             key='Welcome'/>
           <Route
             exact path='/login'
             component={User}
-            useKey={false}
             key='Login'/>
           <Route
             exact path='/signOut'
             render={()=> <User signOut={true} />}
-            useKey={false}
             key='signOut'/>
           <Route
             exact path='/signup'
             render={()=> <User form='signup' />}
-            useKey={false}
             key='signup'/>
           <Route
             exact path='/bucketList'
             component={BucketList}
-            useKey={false}
             key='BucketList'/>
           <Route
             exact path='/preferences'
             component={Preferences}
-            useKey={false}
             key='Preferences'/>
           <Route
             exact path='/search'
             component={Search}
-            useKey={false}
             key='Search'/>
         </main>
       </div>

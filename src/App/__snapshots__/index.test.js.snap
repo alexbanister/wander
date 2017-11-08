@@ -24,43 +24,36 @@ ShallowWrapper {
                     component={[Function]}
                     exact={true}
                     path="/"
-                    useKey={false}
           />
           <Route
                     component={[Function]}
                     exact={true}
                     path="/login"
-                    useKey={false}
           />
           <Route
                     exact={true}
                     path="/signOut"
                     render={[Function]}
-                    useKey={false}
           />
           <Route
                     exact={true}
                     path="/signup"
                     render={[Function]}
-                    useKey={false}
           />
           <Route
                     component={[Function]}
                     exact={true}
                     path="/bucketList"
-                    useKey={false}
           />
           <Route
                     component={[Function]}
                     exact={true}
                     path="/preferences"
-                    useKey={false}
           />
           <Route
                     component={[Function]}
                     exact={true}
                     path="/search"
-                    useKey={false}
           />
 </main>,
       ],
@@ -87,43 +80,36 @@ ShallowWrapper {
               component={[Function]}
               exact={true}
               path="/"
-              useKey={false}
 />,
             <Route
               component={[Function]}
               exact={true}
               path="/login"
-              useKey={false}
 />,
             <Route
               exact={true}
               path="/signOut"
               render={[Function]}
-              useKey={false}
 />,
             <Route
               exact={true}
               path="/signup"
               render={[Function]}
-              useKey={false}
 />,
             <Route
               component={[Function]}
               exact={true}
               path="/bucketList"
-              useKey={false}
 />,
             <Route
               component={[Function]}
               exact={true}
               path="/preferences"
-              useKey={false}
 />,
             <Route
               component={[Function]}
               exact={true}
               path="/search"
-              useKey={false}
 />,
           ],
         },
@@ -137,7 +123,6 @@ ShallowWrapper {
               "component": [Function],
               "exact": true,
               "path": "/",
-              "useKey": false,
             },
             "ref": null,
             "rendered": null,
@@ -151,7 +136,6 @@ ShallowWrapper {
               "component": [Function],
               "exact": true,
               "path": "/login",
-              "useKey": false,
             },
             "ref": null,
             "rendered": null,
@@ -165,7 +149,6 @@ ShallowWrapper {
               "exact": true,
               "path": "/signOut",
               "render": [Function],
-              "useKey": false,
             },
             "ref": null,
             "rendered": null,
@@ -179,7 +162,6 @@ ShallowWrapper {
               "exact": true,
               "path": "/signup",
               "render": [Function],
-              "useKey": false,
             },
             "ref": null,
             "rendered": null,
@@ -193,7 +175,6 @@ ShallowWrapper {
               "component": [Function],
               "exact": true,
               "path": "/bucketList",
-              "useKey": false,
             },
             "ref": null,
             "rendered": null,
@@ -207,7 +188,6 @@ ShallowWrapper {
               "component": [Function],
               "exact": true,
               "path": "/preferences",
-              "useKey": false,
             },
             "ref": null,
             "rendered": null,
@@ -221,7 +201,6 @@ ShallowWrapper {
               "component": [Function],
               "exact": true,
               "path": "/search",
-              "useKey": false,
             },
             "ref": null,
             "rendered": null,
@@ -246,43 +225,36 @@ ShallowWrapper {
                         component={[Function]}
                         exact={true}
                         path="/"
-                        useKey={false}
             />
             <Route
                         component={[Function]}
                         exact={true}
                         path="/login"
-                        useKey={false}
             />
             <Route
                         exact={true}
                         path="/signOut"
                         render={[Function]}
-                        useKey={false}
             />
             <Route
                         exact={true}
                         path="/signup"
                         render={[Function]}
-                        useKey={false}
             />
             <Route
                         component={[Function]}
                         exact={true}
                         path="/bucketList"
-                        useKey={false}
             />
             <Route
                         component={[Function]}
                         exact={true}
                         path="/preferences"
-                        useKey={false}
             />
             <Route
                         component={[Function]}
                         exact={true}
                         path="/search"
-                        useKey={false}
             />
 </main>,
         ],
@@ -309,43 +281,36 @@ ShallowWrapper {
                 component={[Function]}
                 exact={true}
                 path="/"
-                useKey={false}
 />,
               <Route
                 component={[Function]}
                 exact={true}
                 path="/login"
-                useKey={false}
 />,
               <Route
                 exact={true}
                 path="/signOut"
                 render={[Function]}
-                useKey={false}
 />,
               <Route
                 exact={true}
                 path="/signup"
                 render={[Function]}
-                useKey={false}
 />,
               <Route
                 component={[Function]}
                 exact={true}
                 path="/bucketList"
-                useKey={false}
 />,
               <Route
                 component={[Function]}
                 exact={true}
                 path="/preferences"
-                useKey={false}
 />,
               <Route
                 component={[Function]}
                 exact={true}
                 path="/search"
-                useKey={false}
 />,
             ],
           },
@@ -359,7 +324,6 @@ ShallowWrapper {
                 "component": [Function],
                 "exact": true,
                 "path": "/",
-                "useKey": false,
               },
               "ref": null,
               "rendered": null,
@@ -373,7 +337,6 @@ ShallowWrapper {
                 "component": [Function],
                 "exact": true,
                 "path": "/login",
-                "useKey": false,
               },
               "ref": null,
               "rendered": null,
@@ -387,7 +350,6 @@ ShallowWrapper {
                 "exact": true,
                 "path": "/signOut",
                 "render": [Function],
-                "useKey": false,
               },
               "ref": null,
               "rendered": null,
@@ -401,7 +363,6 @@ ShallowWrapper {
                 "exact": true,
                 "path": "/signup",
                 "render": [Function],
-                "useKey": false,
               },
               "ref": null,
               "rendered": null,
@@ -415,7 +376,6 @@ ShallowWrapper {
                 "component": [Function],
                 "exact": true,
                 "path": "/bucketList",
-                "useKey": false,
               },
               "ref": null,
               "rendered": null,
@@ -429,7 +389,6 @@ ShallowWrapper {
                 "component": [Function],
                 "exact": true,
                 "path": "/preferences",
-                "useKey": false,
               },
               "ref": null,
               "rendered": null,
@@ -443,7 +402,6 @@ ShallowWrapper {
                 "component": [Function],
                 "exact": true,
                 "path": "/search",
-                "useKey": false,
               },
               "ref": null,
               "rendered": null,
